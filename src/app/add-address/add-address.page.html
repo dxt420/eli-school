@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                {{"cancel" | translate}} <span class="end"> {{"continue" | translate}}</span>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+
+    <div class="search_box d-flex">
+        <ion-icon class="zmdi zmdi-search ion-text-start"></ion-icon>
+        <ion-searchbar class="ion-no-padding" searchIcon="hide" placeholder="{{'search_location' | translate}}">
+        </ion-searchbar>
+
+        <ion-icon class="zmdi zmdi-gps-dot ion-text-end"></ion-icon>
+    </div>
+</ion-header>
+
+<ion-content class="bg_color">
+	<div class="map" (click)="title()">
+		<img src="assets/images/map.png">
+		<ion-icon class="zmdi zmdi-pin" style="top:38%; right: 50%;"></ion-icon>
+	</div>
+</ion-content>

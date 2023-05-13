@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'phone_verification' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="form">
+        <p class="ion-text-center">
+            <span class="animate__animated animate__fadeInUp">{{'we_send_otp_verification_code' | translate}}</span>
+            <br>
+            <span class="animate__animated animate__fadeInUp">{{'on_your_given_number' | translate}}</span>
+        </p>
+
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <ion-input class="ion-text-center" type="text" placeholder="{{'enter_4_digit_otp' | translate}}"></ion-input>
+            </ion-item>
+
+            <ion-button size="large" shape="block" class="btn animate__animated animate__fadeInUp" (click)="submit()">{{'submit' | translate}}</ion-button>
+            <h4 class="d-flex">0:22 min left <span class="end animate__animated animate__fadeInUp">{{'resend' | translate}}</span></h4>
+        </ion-list>
+
+    </div>
+</ion-content>  

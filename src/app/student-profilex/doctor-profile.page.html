@@ -1,0 +1,151 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <h3 [ngClass]="favorite_icon ? 'end active' : 'end'" (click)="toggleSaveIcon1()">
+                    <ion-icon class="zmdi zmdi-bookmark-outline"></ion-icon>
+                    <ion-icon class="zmdi zmdi-bookmark"></ion-icon>
+                </h3>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <div class="banner d-flex animate__animated animate__fadeInUp">
+        <div class="doctor_details">
+            <div class="img_box center_img animate__animated animate__fadeInUp">
+                <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
+            </div>
+            <!-- <h2 class="animate__animated animate__fadeInUp">Dr. <br>Joseph <br> Williamson</h2>
+            <h3 class="animate__animated animate__fadeInUp">Cardiac Surgeon</h3> -->
+        </div>
+        <div class="" style="display: block; min-width:20px; height: 100%;"></div>
+        <div class="other_details">
+            <div class="text_box animate__animated animate__fadeInUp">
+                <!-- <h3> {{'experience' | translate}}</h3> -->
+                <h3> Name</h3>
+                <!-- <h4> 18 {{'years' | translate}}</h4> -->
+                <h2 class="animate__animated animate__fadeInUp">L. Williamson</h2>
+            </div>
+
+            <div class="text_box animate__animated animate__fadeInUp">
+                <!-- <h3> {{'consultancy_fees' | translate}}</h3> -->
+                <h3> Status</h3>
+                <h4> $28</h4>
+            </div>
+
+            <!-- <div class="text_box feedback animate__animated animate__fadeInUp" (click)="doctor_reviews()">
+                <h3> {{'feedback' | translate}}</h3>
+                <h4 class="d-flex">
+                    <span>
+                        <ion-icon class="zmdi zmdi-star ion-text-start"></ion-icon>
+                        $.5
+                    </span>&nbsp; (124)
+                    <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                </h4>
+            </div>
+
+            <div class="text_box availability animate__animated animate__fadeInUp" (click)="book_appointment_now()">
+                <h3> {{'availability' | translate}}</h3>
+                <h4 class="d-flex">12:00 to 13:00
+                    <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                </h4>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="tab_content">
+        <!--About section start> -->
+        <ion-list lines="none">
+            <ion-card class="address_box animate__animated animate__fadeInUp">
+                <div class="address">
+                    <h2>{{'about' | translate}}</h2>
+                    <div class="text_box animate__animated animate__fadeInUp">
+                        <h4 class="d-flex" style="line-height: 24px; font-weight: 400;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </h4>
+                    </div>
+                    <h5>{{'read_more' | translate}}</h5>
+                </div>
+            </ion-card>
+
+
+            <ion-card class="address_box animate__animated animate__fadeInUp">
+                <div class="address">
+                    <h2>{{'services_at' | translate}}</h2>
+                    <div class="text_box animate__animated animate__fadeInUp">
+                        <h3 class="d-flex">Apple Hospital
+                            <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                        </h3>
+                        <h4 class="d-flex">JJ towers, Johnson street, Hemilton, New York
+                        </h4>
+                    </div>
+
+                    <div class="text_box animate__animated animate__fadeInUp">
+                        <h3 class="d-flex">Seven Star Clinic
+                            <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                        </h3>
+                        <h4 class="d-flex"> Hemiltone Bridge City Point, Hemilton, New York
+
+                        </h4>
+                    </div>
+
+                    <h5>+ 1 {{'more' | translate}}</h5>
+                </div>
+            </ion-card>
+
+            <ion-card class="services">
+                <h2>{{'services' | translate}}</h2>
+
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3> Hypertension Treatment </h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3> COPD Treatment </h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3> Diabetes Management</h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3> ECG </h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3> Obesity Treatment </h3>
+                </div>
+                <h5>+ 1 {{'more' | translate}}</h5>
+            </ion-card>
+
+            <ion-card class="services">
+                <h2>{{'specialization' | translate}}</h2>
+
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3> General Physiciant </h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3>Family Physiciant </h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3>Cardiologist </h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3> Diabetologist </h3>
+                </div>
+                <h5>+ 1 {{'more' | translate}}</h5>
+
+            </ion-card>
+        </ion-list>
+        <!--About section end> -->
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" shape="full" class="btn" (click)="book_appointment_now()">
+        <ion-icon slot="start" class="zmdi zmdi-calendar-alt"></ion-icon>
+        {{'book_appointment_now' | translate}}
+    </ion-button>
+</ion-footer>

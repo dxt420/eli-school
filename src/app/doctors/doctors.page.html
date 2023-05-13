@@ -1,0 +1,99 @@
+<ion-header class="bg_transparent">
+
+ 
+
+    <div class="d-flex profile">
+        <div class="img_box center_img" >
+            <img *ngFor="let s of school" src="{{s.school_logo}}" class="crop_img">
+        </div>
+        <div class="text_box">
+            <h1 *ngFor="let s of school" class="d-flex animate__animated animate__fadeInUp">
+                <span ></span>{{s.school_name}}
+                <!-- <ion-icon class="zmdi zmdi-more-vert end ion-text-end"></ion-icon> -->
+                <ion-icon class="zmdi end ion-text-end" name="checkmark-circle-outline"></ion-icon>
+            </h1>
+            <!-- <h2 class="animate__animated animate__fadeInUp" (click)="lab_profile()">{{"view_profile" | translate}}</h2> -->
+        </div>
+    </div>
+
+    <div class="today-task">
+        <ion-row class="animate__animated animate__fadeInUp d-flex">
+            <ion-col size="6">
+                <div class="text">
+                    <!-- <h3>0 {{"tests" | translate}}</h3>
+                    <h4>{{"booked_today" | translate}}</h4> -->
+                    <h3>Doctor <br> Consultations</h3>
+                    <!-- <h4>Booked Today</h4> -->
+                </div>
+
+              
+            </ion-col>
+        </ion-row>
+
+        <img src="assets/images/vector_hospital.png" class="end animate__animated animate__fadeInUp">
+
+    </div>
+  
+</ion-header>
+<ion-content fullscreen>
+  
+
+
+   
+
+
+    <ion-list *ngIf="!doctors.length"  id="original" lines="none">
+        <h2 class="animate__animated animate__fadeInUp">List of Doctors</h2>
+        <ion-item class="animate__animated animate__fadeInUp">
+            <h3>There are currently no doctors available</h3>
+           
+        </ion-item>
+       
+    </ion-list>
+
+
+    <ion-list lines="none">
+        
+        <ion-item class="animate__animated animate__fadeInUp" *ngFor="let doctor of doctors" (click)="doctor_profile(doctor)">
+            <div class="item_inner d-flex">
+                <div class="img_box center_img">
+                    <img src="assets/images/Doctors.png" class="crop_img">
+                </div>
+                <div class="text_box">
+                    <h2>Dr. {{doctor.name}}</h2>
+                    <h3>  {{doctor.specialization}} <span>{{'at' | translate}}</span> {{doctor.affiliation}} 
+                    </h3>
+                    <!-- <ion-row>
+                        <ion-col size="4">
+                            <h2>
+                                {{'exp' | translate}}&nbsp;<strong>22
+                                    {{'years' | translate}}</strong>
+                            </h2>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                            </h2>
+                        </ion-col>
+
+                        <ion-col size="5" class="d-flex">
+                            <h2 class="end">
+                                <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                <ion-icon class="zmdi zmdi-star"></ion-icon>
+                                &nbsp; (152)
+                            </h2>
+                        </ion-col>
+                    </ion-row> -->
+                </div>
+            </div>
+        </ion-item>
+
+
+      
+
+
+
+    </ion-list>
+</ion-content>

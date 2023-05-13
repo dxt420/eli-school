@@ -1,0 +1,101 @@
+ .doctor_info {
+     padding: 18px;
+     align-items: flex-start;
+     padding-bottom: 36px;
+
+     .img_box {
+         width: 100%;
+         max-width: 150px;
+         height: 175px;
+         border-radius: 11px;
+         margin-right: 18px;
+     }
+
+     .text_box {
+         padding-top: 20px;
+
+         h2 {
+             margin: 0;
+             color: var(--text-dark);
+             font-size: 1.53rem;
+             font-weight: 600;
+             line-height: 31px;
+             padding-bottom: 10px;
+         }
+
+         h3 {
+             margin: 0;
+             color: var(--text-light2);
+             font-size: 0.94rem;
+             font-weight: 400;
+             padding-bottom: 7px;
+         }
+     }
+ }
+
+ .form {
+     width: 100%;
+
+     ion-list {
+
+         ion-card {
+             margin: 0;
+             width: 100%;
+             box-shadow: none;
+             border-radius: 0;
+             padding: 0px 18px;
+             padding-bottom: 32px;
+             background: var(--white);
+
+             h2 {
+                 margin: 0;
+                 color: var(--text-light2);
+                 font-size: 0.94rem;
+                 font-weight: 400;
+                 letter-spacing: 0;
+                 padding-bottom: 15px;
+
+                 span {
+                     color: var(--text-black);
+                     font-weight: 500;
+                 }
+             }
+
+             .rate {
+                 .icon_box {
+                     ion-icon {
+                         color: #dddddd;
+                         font-size: 2.54rem;
+                     }
+
+                     &.active {
+                         ion-icon {
+                             color: var(--yelow_color) !important;
+                         }
+                     }
+                 }
+             }
+
+             ion-item {
+                 &.item-has-placeholder {
+                     margin-bottom: 0;
+                     background: var(--bg-color) !important;
+                     border-radius: 3px;
+
+                     ion-textarea,
+                     ion-input {
+                         --placeholder-opacity: 1;
+                         font-size: 1rem !important;
+                         margin: 0;
+                     }
+
+                 }
+             }
+
+         }
+     }
+ }
+
+ ion-footer { 
+     --animate-duration: .4s !important;
+ }

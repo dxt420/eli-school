@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'give_feedback' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="doctor_info d-flex">
+
+        <div class="img_box center_img animate__animated animate__fadeInUp">
+            <img src="assets/images/doc1.png" class="crop_img">
+        </div>
+
+        <div class="text_box">
+            <h2 class="animate__animated animate__fadeInUp">Dr. <br>Joseph Williamson</h2>
+            <h3 class="animate__animated animate__fadeInUp"> Cardiac Surgeon
+            </h3>
+            <h3 class="animate__animated animate__fadeInUp"> <span>{{'at' | translate}}</span> Apple Hospital
+            </h3>
+        </div>
+    </div>
+
+
+
+    <div class="form">
+        <ion-list lines="none">
+            <ion-card class="animate__animated animate__fadeInUp">
+                <h2>{{'overall_experience_with_doctor' | translate}}</h2>
+                <div class="rate">
+                    <span [ngClass]="ratingIcon1 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon1()">
+                        <ion-icon class="zmdi zmdi-star"></ion-icon>
+                    </span>
+                    <span [ngClass]="ratingIcon2 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon2()">
+                        <ion-icon class="zmdi zmdi-star"></ion-icon>
+                    </span>
+                    <span [ngClass]="ratingIcon3 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon3()">
+                        <ion-icon class="zmdi zmdi-star"></ion-icon>
+                    </span>
+                    <span [ngClass]="ratingIcon4 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon4()">
+                        <ion-icon class="zmdi zmdi-star"></ion-icon>
+                    </span>
+                    <span [ngClass]="ratingIcon5 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon5()">
+                        <ion-icon class="zmdi zmdi-star"></ion-icon>
+                    </span>
+                </div>
+            </ion-card>
+
+
+            <!--
+            <ion-card class="animate__animated animate__fadeInUp">
+                <h2>{{'visited_doctor_for' | translate}}</h2>
+                <ion-item lines="none">
+                    <ion-input class="ion-text-start" readonly></ion-input>
+                </ion-item>
+            </ion-card>
+-->
+
+            <ion-card class="animate__animated animate__fadeInUp">
+                <h2>{{'bref_your_experiece' | translate}}</h2>
+                <ion-item lines="none">
+                    <ion-textarea class="ion-text-start" rows="6" maxlength="140" placeholder="{{'write_your_experience' | translate}}"></ion-textarea>
+                </ion-item>
+            </ion-card>
+        </ion-list>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" shape="full" class="btn">
+        {{'submit_feedback' | translate}}
+    </ion-button>
+</ion-footer>

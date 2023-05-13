@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'confirm_order' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <ion-list lines="none">
+        <h2 class="d-flex">{{'delivery_at' | translate}} <span class="end" (click)="addresses()">{{'change' | translate}}</span></h2>
+
+        <ion-item class="delivery_at animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+                <ion-icon class="zmdi zmdi-home ion-text-start"></ion-icon>
+                <div class="address">
+                    <h3>Home</h3>
+                    <p>14134, Silver Green Street, 2nd Avenue, <br> Hemilton, New York, USA</p>
+                </div>
+            </div>
+        </ion-item>
+
+        <h2 class="d-flex">{{'items_in_cart' | translate}}</h2>
+        <div class="item_list">
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex">Salospir 100mg Tablet</h3>
+                    <h4 class="d-flex">2 Pack <span class="end">$6.00</span></h4>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex">Non Drosy Laritin Tablet
+                        <img src="assets/images/px.png">
+                    </h3>
+                    <h4 class="d-flex">1 Pack <span class="end">$8.00</span></h4>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex">Xenical 120mg Tablet
+                        <img src="assets/images/px.png">
+                    </h3>
+                    <h4 class="d-flex">1 Pack <span class="end">$4.00</span></h4>
+                </div>
+            </ion-item>
+        </div>
+
+        <ion-item class="upload_prescription animate__animated animate__fadeInUp" (click)="prescription()">
+            <div class="item_inner d-flex">
+                <div class="item_img">
+                    <img src="assets/images/px.png">
+                </div>
+                <h2 class="d-flex">
+                    {{'prescription_uploaded' | translate}}
+                    <span class="icon_box end">
+                        <ion-icon class="zmdi zmdi-eye ion-text-start"></ion-icon>
+                        <ion-icon class="zmdi zmdi-delete ion-text-end"></ion-icon>
+                    </span>
+                </h2>
+            </div>
+        </ion-item>
+
+        <div class="payment_details">
+            <ion-item no-lines="none" class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex"> {{'sub_total' | translate}} <span class="end">$18.00</span></h3>
+                </div>
+            </ion-item>
+            <ion-item no-lines="none" class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex"> {{'promo_code_applied' | translate}} <span class="end">-$2.00</span></h3>
+                </div>
+            </ion-item>
+            <ion-item no-lines="none" class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex"> {{'service_charge' | translate}} <span class="end">-$4.00</span></h3>
+                </div>
+            </ion-item>
+            <ion-item no-lines="none" class="amount_payable animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex"> {{'amount_payable' | translate}} <span class="end">$20.00</span></h3>
+                </div>
+            </ion-item>
+        </div>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" shape="full" class="btn" (click)="select_paymet_method()">
+        {{'continue_to_pay' | translate}}
+    </ion-button>
+</ion-footer>

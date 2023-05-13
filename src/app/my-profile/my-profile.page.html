@@ -1,0 +1,34 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'my_profile' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+	<div class="form">
+		<div class="img_container animate__animated animate__zoomIn">
+			<div class="img_box center_img">
+				<img src="assets/images/userprofile.png" class="crop_img">
+			</div>
+			<ion-icon class="zmdi zmdi-camera"></ion-icon>
+		</div>
+		<ion-list lines="none">
+			<ion-item class="animate__animated animate__fadeInUp" lines="none">
+				<ion-label position="fixed">{{'phone_number' | translate}}</ion-label>
+				<ion-input class="ion-text-end" type="text" value="987 654 3210" readonly></ion-input>
+			</ion-item>
+			<ion-item class="animate__animated animate__fadeInUp" lines="none">
+				<ion-label position="fixed">{{'full_name' | translate}}</ion-label>
+				<ion-input class="ion-text-end" type="name" value="Sam Smith" readonly></ion-input>
+			</ion-item>
+			<ion-item class="animate__animated animate__fadeInUp" lines="none">
+				<ion-label position="fixed">{{'email_address' | translate}}</ion-label>
+				<ion-input class="ion-text-end" type="name" value="samsmith@mail.com" readonly></ion-input>
+			</ion-item> 
+		</ion-list>
+	</div>
+</ion-content>

@@ -1,0 +1,150 @@
+ion-header {
+    background: var(--white);
+    padding-bottom: 13px;
+}
+
+.search_box {
+    background: var(--input_field_bg);
+    width: calc(100% - 25px);
+    border-radius: 6px;
+    padding: 5px 13px;
+    min-height: 50px;
+    margin: 0 auto;
+    ion-icon {
+        color: var(--text-light);
+        font-size: 1.4rem;
+        min-width: 35px;
+        height: 35px;
+        line-height: 35px;
+        z-index: 99;
+        position: relative;
+        top: 0px;
+        padding: 0 2px;
+        &.zmdi-tune {
+            font-size: 1.3rem;
+            left: unset;
+            right: 0;
+            z-index: 99;
+        }
+    }
+    ion-searchbar {
+        --background: var(--transparent) !important;
+        --color: var(--text-black);
+        font-weight: 500 !important;
+        --placeholder-opacity: 1;
+        --placeholder-color: var(--text-light2) !important;
+        --placeholder-font-weight: 400 !important;
+        --box-shadow: none !important;
+        padding: 0 !important;
+    }
+}
+
+ion-list {
+    background: var(--transparent) !important;
+    margin: 0;
+    padding: 0;
+    h1 {
+        margin: 0 auto;
+        padding: 18px 15px 18px 15px;
+        color: var(--text-light2);
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    ion-item {
+        padding: 15px 15px 15px 15px;
+        background: var(--white);
+        --inner-padding-end: 0px;
+        --inner-min-height: unset !important;
+        --padding-start: 0;
+        --highligh-color-focused: var(--transparent) !important;
+        margin-bottom: 8px;
+        .item_inner {
+            width: 100%;
+            .text_box {
+                width: 100%;
+                overflow: hidden;
+                ion-checkbox {
+                    --size: 0;
+                    --border-width: 0;
+                    margin: 0;
+                }
+                h2 {
+                    margin: 0;
+                    font-size: 0.95rem;
+                    font-weight: 600;
+                    padding-bottom: 6px;
+                    color: var(--text-dark);
+                }
+                h3 {
+                    margin: 0;
+                    color: var(--text-light);
+                    font-size: 0.8rem;
+                    overflow: hidden;
+                    overflow: hidden;
+                    span {
+                        min-width: fit-content;
+                        small {
+                            font-size: 0.8rem;
+                            color: var(--primary);
+                            display: flex;
+                            align-items: center;
+                            text-transform: uppercase;
+                            ion-icon {
+                                font-size: 1.1rem;
+                                min-width: 20 px;
+                            }
+                            &:nth-child(1) {
+                                // display: none;
+                            }
+                            &:nth-child(2) {
+                                display: none;
+                                color: var(--secondary);
+                            }
+                        }
+                    }
+                }
+            }
+            h4 {
+                margin: 0;
+                color: var(--secondary);
+                font-size: 0.7rem;
+            }
+        }
+        &.item-checkbox-checked {
+            .item_inner .text_box h3 {
+                span {
+                    small {
+                        &:nth-child(1) {
+                            display: none;
+                        }
+                        &:nth-child(2) {
+                            display: flex;
+                            color: var(--secondary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+ion-footer {
+    background: var(--primary);
+    --animate-duration: 0.24s;
+    padding: 18px 15px 18px 15px;
+    h2 {
+        margin: 0;
+        color: var(--white);
+        font-size: 1rem;
+        span {
+            min-width: fit-content;
+            align-items: center;
+            display: flex;
+            letter-spacing: 0.5px;
+            ion-icon {
+                font-size: 1.1rem;
+                min-width: 25px;
+            }
+        }
+    }
+}

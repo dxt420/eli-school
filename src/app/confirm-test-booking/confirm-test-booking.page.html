@@ -1,0 +1,178 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'confirm_booking' | translate}}</ion-title>
+    </ion-toolbar>
+
+    <div class="test-info">
+        <h2>Complete Blood Count</h2>
+        <h3 class="d-flex">
+            <span class="address">City Cure Labs</span>
+            <span class="end">$20.00</span>
+        </h3>
+    </div>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <div class="form">
+        <ion-list lines="none">
+            <ion-card class="pickup_address animate__animated animate__fadeInUp ">
+                <h2 class="d-flex">{{'pickup_address' | translate}}</h2>
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-home ion-text-start"></ion-icon>
+                    <div class="address">
+                        <h3>Home</h3>
+                        <p>14134, Silver Green Street, 2nd Avenue, <br> Hemilton, New York, USA</p>
+                    </div>
+                </div>
+
+            </ion-card>
+
+            <ion-card class="animate__animated animate__fadeInUp">
+                <h2 class="d-flex">{{'select_date' | translate}} <span class="end">June 2020</span></h2>
+                <div class="date_container ion-text-center">
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand1 ? 'active' : '' " (click)="faqExpandToggle1()">
+                        <h3>WED</h3>
+                        <h2>12</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand2 ? 'active' : '' " (click)="faqExpandToggle2()">
+                        <h3>THU</h3>
+                        <h2>13</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand3 ? 'active' : '' " (click)="faqExpandToggle3()">
+                        <h3>FRI</h3>
+                        <h2>14</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand4 ? 'active' : '' " (click)="faqExpandToggle4()">
+                        <h3>SAT</h3>
+                        <h2>15</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand5 ? 'active' : '' " (click)="faqExpandToggle5()">
+                        <h3>SUN</h3>
+                        <h2>16</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand6 ? 'active' : '' " (click)="faqExpandToggle6()">
+                        <h3>MON</h3>
+                        <h2>17</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand7 ? 'active' : '' " (click)="faqExpandToggle7()">
+                        <h3>TUE</h3>
+                        <h2>18</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand8 ? 'active' : '' " (click)="faqExpandToggle8()">
+                        <h3>WED</h3>
+                        <h2>19</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand9 ? 'active' : '' " (click)="faqExpandToggle9()">
+                        <h3>THU</h3>
+                        <h2>20</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand10 ? 'active' : '' " (click)="faqExpandToggle10()">
+                        <h3>FRI</h3>
+                        <h2>21</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand11 ? 'active' : '' " (click)="faqExpandToggle11()">
+                        <h3>SAT</h3>
+                        <h2>22</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand12 ? 'active' : '' " (click)="faqExpandToggle12()">
+                        <h3>SUN</h3>
+                        <h2>23</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand13 ? 'active' : '' " (click)="faqExpandToggle13()">
+                        <h3>MON</h3>
+                        <h2>24</h2>
+                    </div>
+                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand14 ? 'active' : '' " (click)="faqExpandToggle14()">
+                        <h3>TUE</h3>
+                        <h2>25</h2>
+                    </div>
+
+                </div>
+            </ion-card>
+
+            <ion-card class="animate__animated animate__fadeInUp">
+                <h2>{{'available_times' | translate}}</h2>
+                <ion-radio-group value="AvailableTimes">
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>01:30 PM</ion-label>
+                        <ion-radio slot="start" value="1"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>02:15 PM</ion-label>
+                        <ion-radio slot="start" value="2"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>03:00 PM</ion-label>
+                        <ion-radio slot="start" value="3"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>03:30 PM</ion-label>
+                        <ion-radio slot="start" value="4"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>03:45 PM</ion-label>
+                        <ion-radio slot="start" value="5"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>04:00 PM</ion-label>
+                        <ion-radio slot="start" value="6"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>04:15 PM</ion-label>
+                        <ion-radio slot="start" value="7"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>04:30 PM</ion-label>
+                        <ion-radio slot="start" value="8"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>04:45 PM</ion-label>
+                        <ion-radio slot="start" value="9"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>05:00 PM</ion-label>
+                        <ion-radio slot="start" value="10"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>05:15 PM</ion-label>
+                        <ion-radio slot="start" value="11"></ion-radio>
+                    </ion-item>
+                    <ion-item class="animate__animated animate__zoomIn">
+                        <ion-label>05:30 PM</ion-label>
+                        <ion-radio slot="start" value="12"></ion-radio>
+                    </ion-item>
+                </ion-radio-group>
+            </ion-card>
+        </ion-list>
+    </div>
+
+</ion-content>
+
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-list lines="none">
+        <div class="payment_details">
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex"> {{'sub_total' | translate}} <span class="end">$20.00</span></h3>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex"> {{'pickup_charge' | translate}} <span class="end">$2.00</span></h3>
+                </div>
+            </ion-item>
+            <ion-item class="amount_payable animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h3 class="d-flex"> {{'amount_to_pay' | translate}} <span class="end">$22.00</span></h3>
+                </div>
+            </ion-item>
+        </div>
+    </ion-list>
+    <ion-button size="large" shape="full" class="btn" (click)="my_lab_tests()">
+        {{'continue_to_pay' | translate}}
+    </ion-button>
+</ion-footer>

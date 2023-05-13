@@ -1,0 +1,1500 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <h3 [ngClass]="favorite_icon ? 'end active' : 'end'" (click)="toggleSaveIcon1()">
+                    <ion-icon class="zmdi zmdi-bookmark-outline"></ion-icon>
+                    <ion-icon class="zmdi zmdi-bookmark"></ion-icon>
+                </h3>
+                <span class="cart_icon" (click)="cart()">
+                    <ion-icon class="zmdi zmdi-shopping-cart ion-text-start"></ion-icon>
+                    <ion-badge>1</ion-badge>
+                </span>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="banner">
+        <div class="prescription_required animate__animated animate__fadeInDown">
+            <img src="assets/images/px.png">
+        </div>
+        <div class="banner_img animate__animated animate__zoomIn">
+            <img src="assets/images/med1.png">
+        </div>
+        <div class="banner_details">
+            <h2 class="item_title d-flex animate__animated animate__fadeInUp">
+                Salospir 100mg Tablet
+                <span class="end">
+                    <ion-icon class="zmdi zmdi-star ion-text-start"></ion-icon>
+                    4.5
+                </span>
+            </h2>
+            <h3 class="d-flex animate__animated animate__fadeInUp">
+                <span class="category">Health Care </span>
+
+                <span class="end" (click)="product_reviews()">
+                    {{'read_all' | translate}} 125 {{'reviews2' | translate}}
+                    <ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon>
+                </span>
+            </h3>
+        </div>
+    </div>
+
+    <div class="tab_content">
+        <!--About section start> -->
+        <div class="description animate__animated animate__fadeInUp">
+            <div class="text_box">
+                <h2>{{'description' | translate}}</h2>
+                <p class="animate__animated animate__fadeInUp">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                </p>
+            </div>
+        </div>
+
+        <div class="seller_details animate__animated animate__fadeInUp" (click)="seller_profile()">
+            <h2>{{'sold_by' | translate}}</h2>
+            <div class=" d-flex ">
+                <div class="img_box center_img">
+                    <img src="assets/images/1.png" class="crop_img">
+                </div>
+                <div class="text_box">
+                    <h3>Well Life Store</h3>
+                    <p class="d-flex">
+                        <span class="address"><ion-icon class="zmdi zmdi-pin ion-text-center"></ion-icon> Willngton Bridge</span>
+                        <span class="end">{{'view_profile' | translate}} <ion-icon class="zmdi zmdi-chevron-right ion-text-end"></ion-icon> </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="smilar_products">
+            <h1> {{'smilar_products' | translate}}</h1>
+            <div class="item_row">
+                <ion-row>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med1.png">
+                                </div>
+                                <h2>Salospir 100mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med2.png">
+                                </div>
+                                <h2>Xanical 120mg <br> Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med3.png">
+                                </div>
+                                <h2>Allergy Relief <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$4.00</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <div class="prescription_required">
+                                    <img src="assets/images/px.png">
+                                </div>
+                                <div class="img_box">
+                                    <img src="assets/images/med4.png">
+                                </div>
+                                <h2>Arber OTC <br> Topcare Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med5.png">
+                                </div>
+                                <h2>Non Drosy <br> Laritin Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+
+                    <ion-col class="animate__animated animate__zoomIn" size="6">
+                        <div class="item ion-text-center">
+                            <div class="item_content">
+                                <!--
+                         <div class="prescription_required">
+                             <img src="assets/images/px.png">
+                         </div>
+-->
+                                <div class="img_box">
+                                    <img src="assets/images/med6.png">
+                                </div>
+                                <h2>CoricidinHBP 100mg <br>Tablet</h2>
+                            </div>
+                            <div class="item_footer d-flex">
+                                <h3 class="ion-text-center">$3.50</h3>
+                                <h4 class="ion-text-center end">
+                                    <span> +</span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </div>
+    </div>
+    <!--About section end> -->
+
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-item lines="none">
+        <div class="item_inner d-flex">
+            <h2>$ 3.50</h2>
+            <ion-select [(ngModel)]="gaming" class="end" interface="popover" mode="ios">
+                <ion-select-option value="1">500gm Pack</ion-select-option>
+                <ion-select-option value="2">200gm Pack</ion-select-option>
+                <ion-select-option value="3">100gm Pack</ion-select-option>
+            </ion-select>
+            <ion-icon class="zmdi zmdi-chevron-down ion-text-end"></ion-icon>
+        </div>
+    </ion-item>
+    <ion-button size="large" shape="full" class="btn">
+        {{'add_to_cart' | translate}}
+    </ion-button>
+</ion-footer>

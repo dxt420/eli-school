@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <span>Consultation Detail</span>
+                <!-- <ion-icon class="zmdi zmdi-more-vert end ion-text-end"></ion-icon> -->
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="doctor_info d-flex">
+
+        <div class="img_box center_img animate__animated animate__fadeInUp">
+            <img src="assets/images/doc1.png" class="crop_img">
+        </div>
+
+        <div class="text_box">
+            <!-- <h2 class="animate__animated animate__fadeInUp">Dr. <br>Joseph Williamson</h2>
+            <h3 class="animate__animated animate__fadeInUp"> Cardiac Surgeon
+            </h3>
+            <h3 class="animate__animated animate__fadeInUp"> <span>{{'at' | translate}}</span> Nsambya Hospital
+            </h3> -->
+
+            <h2 class="animate__animated animate__fadeInUp">Dr. {{consultation.doctor.name}}</h2>
+            <h3 class="animate__animated animate__fadeInUp">{{consultation.doctor.specialization}} </h3>
+            <h3 class="animate__animated animate__fadeInUp"> <span>{{'at' | translate}}</span> {{consultation.doctor.affiliation}} 
+            </h3> 
+        </div>
+    </div>
+
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h2 class="d-flex">
+                        <!-- {{'appointment_on' | translate}} -->
+
+                        Appointment at
+                        <!-- <span class="end" (click)="rateDoc()">{{'rate_doc' | translate}}</span> -->
+                    </h2>
+                    <h3> {{consultation.consultation_time}}</h3>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h2 class="d-flex">Location</h2>
+                    <h3> Online Video Conference</h3>
+                    <h4 class="d-flex">
+                        requires doctor approval
+                        <ion-icon class="zmdi zmdi-navigation end ion-text-end"></ion-icon>
+                    </h4>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h2 class="d-flex"> Appointment_Booked For</h2>
+                    <h3>{{consultation.student.name}}</h3>
+                </div>
+            </ion-item>
+
+          
+        </ion-list>
+    </div>
+</ion-content>
+<!-- <ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-row>
+        <ion-col size="6">
+            <ion-button size="large" shape="full" fill="clear" class="btn">
+                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                {{'call' | translate}}
+            </ion-button>
+        </ion-col>
+        <ion-col size="6">
+            <ion-button size="large" shape="full" class="btn" (click)="chat()">
+                <ion-icon class="zmdi zmdi-comment-alt-text ion-text-start"></ion-icon>
+                {{'chat' | translate}}
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-footer> -->

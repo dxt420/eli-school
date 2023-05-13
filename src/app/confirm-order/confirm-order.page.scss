@@ -1,0 +1,170 @@
+ion-list {
+    margin: 0;
+    background: none;
+    padding: 0;
+    padding-top: 4px;
+    h2 {
+        margin: 0;
+        color: #595959;
+        padding: 12px 18px 15px 18px;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 0;
+        span {
+            color: var(--secondary);
+        }
+    }
+    ion-item {
+        --inner-padding-end: 0px;
+        --inner-min-height: unset !important;
+        --min-height: unset !important;
+        --padding-start: 0;
+        --background: var(--transparent) !important;
+        background: var(--white);
+        padding: 20px 18px;
+        margin-bottom: 4px;
+        .item_inner {
+            width: 100%;
+        }
+        &.delivery_at {
+            .item_inner {
+                align-items: flex-start;
+                width: 100%;
+                ion-icon {
+                    color: var(--secondary);
+                    font-size: 1.6rem;
+                    min-width: 39px;
+                }
+                .address {
+                    h3 {
+                        color: var(--text-black);
+                        margin: 0;
+                        font-size: 1rem;
+                        letter-spacing: .5px;
+                        padding-bottom: 9px;
+                    }
+                    p {
+                        margin: 0;
+                        color: var(--text-light);
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        &.upload_prescription {
+            padding: 18px;
+            .item_inner {
+                .item_img {
+                    min-width: 18px;
+                    width: 18px;
+                    margin-right: 20px;
+                    img {
+                        display: block;
+                    }
+                }
+                h2 {
+                    margin: 0;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: var(--text-black);
+                    padding: 0;
+                    .icon_box {
+                        ion-icon {
+                            color: var(--secondary);
+                            font-size: 1.35rem;
+                            min-width: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .item_list {
+        margin-bottom: 5px;
+        ion-item {
+            margin-bottom: 0;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            .item_inner {
+                h3 {
+                    margin: 0;
+                    color: var(--text-light);
+                    font-size: 1rem;
+                    letter-spacing: 0;
+                    font-weight: 500;
+                    padding-bottom: 6px;
+                    img {
+                        min-width: 15px;
+                        width: 15px;
+                        margin-left: 20px;
+                        display: block;
+                    }
+                }
+                h4 {
+                    margin: 0;
+                    color: var(--text-light2);
+                    font-size: .85rem;
+                    font-weight: 400;
+                    span {
+                        color: var(--text-black);
+                        font-size: .98rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+            &:first-child {
+                padding-top: 20px
+            }
+            &:last-child {
+                padding-bottom: 20px
+            }
+        }
+    }
+    .payment_details {
+        margin-bottom: 4px;
+        ion-item {
+            margin-bottom: 0;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            .item_inner {
+                h3 {
+                    margin: 0;
+                    color: var(--text-light);
+                    font-size: .95rem;
+                    letter-spacing: 0;
+                    font-weight: 500;
+                    span {
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                        color: var(--text-dark);
+                    }
+                }
+            }
+            &:first-child {
+                padding-top: 20px
+            }
+            &:last-child {
+                padding-bottom: 20px
+            }
+            &.amount_payable {
+                .item_inner {
+                    h3 {
+                        color: var(--text-black);
+                        font-size: 1.1rem;
+                        letter-spacing: 0;
+                        font-weight: 600;
+                        span {
+                            color: var(--text-black);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+ion-footer {
+    --animate-duration: .4s !important;
+}

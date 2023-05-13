@@ -1,0 +1,1342 @@
+<ion-header class="bg_transparent">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <h3 class="end">
+                    <span [ngClass]="favorite_icon ? 'bookmark_icon active' : 'bookmark_icon'" (click)="toggleSaveIcon1()">
+                        <ion-icon class="zmdi zmdi-bookmark-outline"></ion-icon>
+                        <ion-icon class="zmdi zmdi-bookmark"></ion-icon>
+                    </span>
+                </h3>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+
+    <div class="banner">
+        <ion-slides pager="true" loop="true">
+            <ion-slide>
+                <div class="img_box center_img">
+                    <img src="assets/images/img_hospital.png">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="img_box center_img">
+                    <img src="assets/images/img_hospital.png">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="img_box center_img">
+                    <img src="assets/images/img_hospital.png">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="img_box center_img">
+                    <img src="assets/images/img_hospital.png">
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="img_box center_img">
+                    <img src="assets/images/img_hospital.png">
+                </div>
+            </ion-slide>
+        </ion-slides>
+        <div class="banner_details">
+            <h2 class="animate__animated animate__fadeInUp">Nsambya Hospital</h2>
+            <h3 class="animate__animated animate__fadeInUp">General Hospital</h3>
+        </div>
+
+        <ion-segment (ionChange)="segmentChanged()" [(ngModel)]="segment" lines="none">
+            <ion-segment-button value="0">
+                <ion-label>
+                    {{'about' | translate}}
+                </ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="1">
+                <ion-label>
+                    {{'pharmacy' | translate}}
+                </ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <div class="tab_content">
+        <ion-slides #slides (ionSlideDidChange)="slideChanged()">
+            <!--About section start> -->
+            <ion-slide>
+                <ion-list class="about-list" lines="none">
+                    <ion-card class="departments animate__animated animate__fadeInUp">
+                        <h2 class="animate__animated animate__fadeInUp">{{'services' | translate}}</h2>
+                        <div class="text_box animate__animated animate__fadeInUp">
+                            <h3>Minor OT/ Dressing Romm</h3>
+                        </div>
+                        <div class="text_box animate__animated animate__fadeInUp">
+                            <h3>Emergency Ward</h3>
+                        </div>
+                        <div class="text_box animate__animated animate__fadeInUp">
+                            <h3>Radiology/X-ray facility </h3>
+                        </div>
+                        <div class="text_box animate__animated animate__fadeInUp">
+                            <h3>Ladoratory Services</h3>
+                        </div>
+                        <div class="text_box animate__animated animate__fadeInUp">
+                            <h3>Ambulance Services</h3>
+                        </div>
+                        <h5>+ 5 {{'more' | translate}}</h5>
+                    </ion-card>
+
+                    <ion-card class="address_box animate__animated animate__fadeInUp">
+                        <div class="address d-flex">
+                            <div class="">
+                                <h2 class="animate__animated animate__fadeInUp">{{'address' | translate}}</h2>
+                                <h3 class="d-flex animate__animated animate__fadeInUp">
+                                    <ion-icon class="zmdi zmdi-pin"></ion-icon>
+                                    Nsambya Road, Kampala.
+                                </h3>
+                            </div>
+                            <h5 class="end">
+                                <ion-icon class="zmdi zmdi-navigation ion-text-end"></ion-icon>
+                            </h5>
+                        </div>
+
+                        <div class="map_box">
+                            <img src="assets/images/map.png">
+                            <ion-icon style="top:34%; left: 46%;" class="animate__animated animate__zoomIn"></ion-icon>
+                        </div>
+                    </ion-card>
+                </ion-list>
+                <ion-button size="large" shape="full" class="btn animate__animated animate__fadeInUp">
+                    <ion-icon slot="start" class="zmdi zmdi-phone"></ion-icon>
+                    {{'call_now' | translate}}
+                </ion-button>
+            </ion-slide>
+            <!--About section end> -->
+
+
+            <!--Doctors section start> -->
+            <ion-slide>
+                <ion-list class="doctors_list" lines="none">
+                    <ion-card class="animate__animated animate__fadeInUp" [ngClass]="faqExpand1 ? 'active' : '' " (click)="faqExpandToggle1()">
+                        <div class="card_header">
+                            <h2 class="d-flex">
+                                <span class="card_title">Oncology Department </span>
+                                <ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
+                            </h2>
+                        </div>
+                        <div class="card_content">
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc1.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Joseph Williamson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Apple Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star"></ion-icon>
+                                                    &nbsp;
+                                                    (152)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc2.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Angline Taylor</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Operum Clinics
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (240)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc3.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Anthony Peterson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Opus Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (199)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </div>
+                    </ion-card>
+
+
+
+                    <ion-card class="animate__animated animate__fadeInUp" [ngClass]="faqExpand2 ? 'active' : '' " (click)="faqExpandToggle2()">
+                        <div class="card_header">
+                            <h2 class="d-flex">
+                                <span class="card_title">Cardiology Department </span>
+                                <ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
+                            </h2>
+                        </div>
+                        <div class="card_content">
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc4.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Elina George </h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Lisameth Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star "></ion-icon>
+                                                    &nbsp;
+                                                    (192)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc1.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Joseph Williamson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Apple Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star"></ion-icon>
+                                                    &nbsp;
+                                                    (152)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc2.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Angline Taylor</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Operum Clinics
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (240)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc3.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Anthony Peterson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Opus Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (199)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </div>
+                    </ion-card>
+
+
+                    <ion-card class="animate__animated animate__fadeInUp" [ngClass]="faqExpand4 ? 'active' : '' " (click)="faqExpandToggle4()">
+                        <div class="card_header">
+                            <h2 class="d-flex">
+                                <span class="card_title">Oncology Department </span>
+                                <ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
+                            </h2>
+                        </div>
+                        <div class="card_content">
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc1.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Joseph Williamson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Apple Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star"></ion-icon>
+                                                    &nbsp;
+                                                    (152)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc3.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Anthony Peterson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Opus Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (199)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc4.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Elina George </h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Lisameth Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star "></ion-icon>
+                                                    &nbsp;
+                                                    (192)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc2.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Angline Taylor</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Operum Clinics
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (240)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </div>
+                    </ion-card>
+
+
+                    <ion-card class="animate__animated animate__fadeInUp" [ngClass]="faqExpand3 ? 'active' : '' " (click)="faqExpandToggle3()">
+                        <div class="card_header">
+                            <h2 class="d-flex">
+                                <span class="card_title">Neurology Department </span>
+                                <ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
+                            </h2>
+                        </div>
+                        <div class="card_content">
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc3.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Anthony Peterson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Opus Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (199)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc4.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Elina George </h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Lisameth Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star "></ion-icon>
+                                                    &nbsp;
+                                                    (192)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc1.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Joseph Williamson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Apple Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star"></ion-icon>
+                                                    &nbsp;
+                                                    (152)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc2.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Angline Taylor</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Operum Clinics
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (240)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </div>
+                    </ion-card>
+
+
+
+
+
+
+
+
+
+
+                    <ion-card class="animate__animated animate__fadeInUp" [ngClass]="faqExpand5 ? 'active' : '' " (click)="faqExpandToggle5()">
+                        <div class="card_header">
+                            <h2 class="d-flex">
+                                <span class="card_title">Oncology Department </span>
+                                <ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
+                            </h2>
+                        </div>
+                        <div class="card_content">
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc1.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Joseph Williamson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Apple Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star"></ion-icon>
+                                                    &nbsp;
+                                                    (152)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc2.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Angline Taylor</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Operum Clinics
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (240)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc3.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Anthony Peterson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Opus Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (199)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </div>
+                    </ion-card>
+
+
+
+                    <ion-card class="animate__animated animate__fadeInUp" [ngClass]="faqExpand6 ? 'active' : '' " (click)="faqExpandToggle6()">
+                        <div class="card_header">
+                            <h2 class="d-flex">
+                                <span class="card_title">Cardiology Department </span>
+                                <ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
+                            </h2>
+                        </div>
+                        <div class="card_content">
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc4.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Elina George </h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Lisameth Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star "></ion-icon>
+                                                    &nbsp;
+                                                    (192)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc1.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Joseph Williamson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Apple Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star"></ion-icon>
+                                                    &nbsp;
+                                                    (152)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc2.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Angline Taylor</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Operum Clinics
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (240)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc3.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Anthony Peterson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Opus Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (199)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </div>
+                    </ion-card>
+
+
+                    <ion-card class="animate__animated animate__fadeInUp" [ngClass]="faqExpand7 ? 'active' : '' " (click)="faqExpandToggle7()">
+                        <div class="card_header">
+                            <h2 class="d-flex">
+                                <span class="card_title">Oncology Department </span>
+                                <ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
+                            </h2>
+                        </div>
+                        <div class="card_content">
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc1.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Joseph Williamson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Apple Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star"></ion-icon>
+                                                    &nbsp;
+                                                    (152)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc3.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Anthony Peterson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Opus Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (199)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc4.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Elina George </h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Lisameth Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star "></ion-icon>
+                                                    &nbsp;
+                                                    (192)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc2.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Angline Taylor</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Operum Clinics
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (240)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </div>
+                    </ion-card>
+
+
+                    <ion-card class="animate__animated animate__fadeInUp" [ngClass]="faqExpand8 ? 'active' : '' " (click)="faqExpandToggle8()">
+                        <div class="card_header">
+                            <h2 class="d-flex">
+                                <span class="card_title">Neurology Department </span>
+                                <ion-icon class="zmdi zmdi-chevron-down ion-text-end end"></ion-icon>
+                            </h2>
+                        </div>
+                        <div class="card_content">
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc3.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Anthony Peterson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Opus Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (199)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc4.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Elina George </h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Lisameth Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star "></ion-icon>
+                                                    &nbsp;
+                                                    (192)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc1.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Joseph Williamson</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Apple Hospital
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star"></ion-icon>
+                                                    &nbsp;
+                                                    (152)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+
+
+                            <ion-item (click)="doctor_profile()">
+                                <div class="item_inner d-flex">
+                                    <div class="img_box center_img">
+                                        <img src="assets/images/doc2.png" class="crop_img">
+                                    </div>
+                                    <div class="text_box">
+                                        <h2>Dr. Angline Taylor</h2>
+                                        <h3> Cardiac Surgeon <span>{{'at' | translate}}</span> Operum Clinics
+                                        </h3>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h2>
+                                                    {{'exp' | translate}}&nbsp;<strong>22
+                                                        {{'years' | translate}}</strong>
+                                                </h2>
+                                            </ion-col>
+                                            <ion-col size="3">
+                                                <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                                                </h2>
+                                            </ion-col>
+
+                                            <ion-col size="5" class="d-flex">
+                                                <h2 class="end">
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                                    &nbsp;
+                                                    (240)
+                                                </h2>
+                                            </ion-col>
+                                        </ion-row>
+                                    </div>
+                                </div>
+                            </ion-item>
+                        </div>
+                    </ion-card>
+                </ion-list>
+            </ion-slide>
+            <!--Doctors section end> -->
+        </ion-slides>
+    </div>
+</ion-content>

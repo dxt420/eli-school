@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar>
+         <ion-title>Confirmation request sent</ion-title> 
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container ion-text-center">
+        <div class="img_box animate__animated animate__zoomIn">
+            <img src="assets/images/img_appointmentbooked.png">
+        </div>
+        <h1 class="animate__animated animate__fadeInUp" [innerHTML]="'Check your consultations <br> tab for all your <br> consultations.'"></h1>
+        <p class="animate__animated animate__fadeInUp" [innerHTML]="'Request Sent'"></p>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" shape="full" class="btn" (click)="navMyAppointments()">
+        Student Consultations
+    </ion-button>
+</ion-footer>

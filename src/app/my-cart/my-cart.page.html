@@ -1,0 +1,134 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'my_cart' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <ion-list class="item_list" lines="none">
+        <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+                <div class="item_img">
+                    <img src="assets/images/med1.png">
+                </div>
+                <div class="text_box">
+                    <h2 class="d-flex">
+                        Salospir 100mg Tablet
+                        <span class="prescription_required end">
+                            <img src="assets/images/px.png">
+                        </span>
+                    </h2>
+                    <h3>Pack of 500 gm</h3>
+                    <h4 class="d-flex">
+                        <span class="add_remove_btn">-</span>
+                        <strong>1</strong>
+                        <span class="add_remove_btn add">+</span>
+                        <span class="end">$6.00</span>
+                    </h4>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+                <div class="item_img">
+                    <img src="assets/images/med2.png">
+                </div>
+                <div class="text_box">
+                    <h2 class="d-flex"> Non Drosy Larin Tablet
+                        <span class="prescription_required end">
+                            <img src="assets/images/px.png">
+                        </span>
+                    </h2>
+                    <h3>Pack of 100 gm</h3>
+                    <h4 class="d-flex">
+                        <span class="add_remove_btn">-</span>
+                        <strong>1</strong>
+                        <span class="add_remove_btn add">+</span>
+
+                        <span class="end">$8.00</span>
+                    </h4>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp">
+            <div class="item_inner d-flex">
+                <div class="item_img">
+                    <img src="assets/images/med5.png">
+                </div>
+                <div class="text_box">
+                    <h2>Xenical 120mg Tablet</h2>
+                    <h3>Pack of 120 120 gm</h3>
+                    <h4 class="d-flex">
+                        <span class="add_remove_btn">-</span>
+                        <strong>1</strong>
+                        <span class="add_remove_btn add">+</span>
+
+                        <span class="end">$4.00</span>
+                    </h4>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="upload_prescription animate__animated animate__fadeInUp" (click)="prescription()">
+            <div class="item_inner d-flex">
+                <div class="item_img">
+                    <img src="assets/images/px.png">
+                </div>
+                <h2 class="d-flex">
+                    {{'upload_prescription' | translate}}
+
+                    <span class="icon_box end">
+                        <ion-icon class="zmdi zmdi-eye ion-text-start"></ion-icon>
+                        <ion-icon class="zmdi zmdi-delete ion-text-end"></ion-icon>
+                    </span>
+                </h2>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <div class="form" [ngClass]="fabAction ? 'active' : ''">
+        <ion-item class="animate__animated animate__fadeInUp" lines="none">
+            <ion-input type="text" placeholder="{{'add_promocode' | translate}}"></ion-input>
+            <div slot="end" class="item_end d-flex">
+                <h3 (click)="offers()">{{'view_offers' | translate}}</h3>
+                <ion-icon  class="zmdi zmdi-check" slot="end"></ion-icon> 
+            </div>
+        </ion-item>
+        
+        <div class="payment_details animate__animated animate__fadeInUp">
+            <div class="container">
+                <h2 class="d-flex">
+                    {{'sub_total' | translate}}
+                    <span class="end">$18.00</span>
+                </h2>
+                <h2 class="d-flex">
+                    {{'promo_code_applied' | translate}}
+                    <span class="end">- $2.00</span>
+                </h2>
+                <h2 class="d-flex">
+                    {{'service_charge' | translate}}
+                    <span class="end">$4.00</span>
+                </h2>
+
+            </div>
+            <div class="amount_payable" (click)="toggleFab()">
+                <h2 class="d-flex">
+                    {{'amount_payable' | translate}}
+                    <ion-icon class="zmdi zmdi-alert-circle-o"></ion-icon>
+                    <ion-icon class="zmdi zmdi-chevron-down"></ion-icon>
+                    <span class="end">$20.40</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <ion-button size="large" shape="full" class="btn animate__animated animate__fadeInUp" (click)="confirm_order()">
+        {{'checkout' | translate}}
+        <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+    </ion-button>
+</ion-footer>

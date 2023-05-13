@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <ion-icon class="zmdi zmdi-close ion-text-start" (click)="dismiss()"></ion-icon>
+                {{'short_filters' | translate}}
+
+                <span class="end">{{'reset' | translate}}</span>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <ion-list lines="none">
+        <ion-card class="animate__animated animate__fadeInUp">
+            <h2>{{'sort_by' | translate}}</h2>
+            <ion-radio-group>
+                <ion-item class="animate__animated animate__fadeInUp">
+                    <ion-label>{{'consultancy_fees' | translate}}</ion-label>
+                    <ion-radio slot="end" value="consultancy_fees"></ion-radio>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInUp">
+                    <ion-label>{{'ratings' | translate}}</ion-label>
+                    <ion-radio slot="end" value="ratings"></ion-radio>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInUp">
+                    <ion-label>{{'distance' | translate}}</ion-label>
+                    <ion-radio slot="end" value="distance"></ion-radio>
+                </ion-item>
+            </ion-radio-group>
+        </ion-card>
+
+        <ion-card class="animate__animated animate__fadeInUp">
+            <h2>{{'consultancy_fees' | translate}}</h2>
+
+            <ion-item class="item_range animate__animated animate__fadeInUp">
+                <h3 class="d-flex">1 $ <span class="end">100 $</span></h3>
+                <ion-range dualKnobs="true" min="21" max="72" mode="md"></ion-range>
+            </ion-item>
+
+        </ion-card>
+
+        <ion-card class="animate__animated animate__fadeInUp">
+            <h2>{{'gender' | translate}}</h2>
+            <ion-row>
+                <ion-col size="6">
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <ion-label>{{'male' | translate}}</ion-label>
+                        <ion-checkbox slot="start"></ion-checkbox>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-item class="animate__animated animate__fadeInUp">
+                        <ion-label>{{'female' | translate}}</ion-label>
+                        <ion-checkbox slot="start"></ion-checkbox>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+    </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" shape="block" class="btn">{{'apply_now' | translate}}</ion-button>
+</ion-footer>

@@ -1,0 +1,96 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            {{'review_order' | translate}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <div class="form">
+        <ion-list lines="none">
+            <ion-card class="animate__animated animate__fadeInUp">
+                <div class="item_detail animate__animated animate__fadeInUp d-flex">
+                    <div class="text_box">
+                        <h2>Well life Store</h2>
+                        <h3>Salospir 100mg <br>Tablet</h3>
+                    </div>
+                    <div class="img_box end">
+                        <img src="assets/images/med1.png">
+                    </div>
+                </div>
+                <div class="overall_experience animate__animated animate__fadeInUp">
+                    <h2>{{'overall_experience' | translate}}</h2>
+                    <div class="rate">
+                        <span [ngClass]="ratingIcon1 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon1()">
+                            <ion-icon class="zmdi zmdi-star"></ion-icon>
+                        </span>
+                        <span [ngClass]="ratingIcon2 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon2()">
+                            <ion-icon class="zmdi zmdi-star"></ion-icon>
+                        </span>
+                        <span [ngClass]="ratingIcon3 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon3()">
+                            <ion-icon class="zmdi zmdi-star"></ion-icon>
+                        </span>
+                        <span [ngClass]="ratingIcon4 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon4()">
+                            <ion-icon class="zmdi zmdi-star"></ion-icon>
+                        </span>
+                        <span [ngClass]="ratingIcon5 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon5()">
+                            <ion-icon class="zmdi zmdi-star"></ion-icon>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="add_feedback animate__animated animate__fadeInUp">
+                    <h2>{{'add_feedback' | translate}}</h2>
+                    <ion-item lines="none">
+                        <ion-textarea class="ion-text-start" auto-grow="true" rows="4" maxlength="140" placeholder="{{'write_your_feedback' | translate}}"></ion-textarea>
+                    </ion-item>
+                </div>
+                <ion-button size="large" shape="full" class="btn animate__animated animate__fadeInUp">{{'submit' | translate}}</ion-button>
+            </ion-card>
+
+            <ion-card class="animate__animated animate__fadeInUp">
+                <div class="item_detail animate__animated animate__fadeInUp d-flex">
+                    <div class="text_box">
+                        <h2>Well life Store</h2>
+                        <h3> Non Drosy Laritin <br>Tablet</h3>
+                    </div>
+                    <div class="img_box end">
+                        <img src="assets/images/med2.png">
+                    </div>
+                </div>
+                <div class="overall_experience animate__animated animate__fadeInUp">
+                    <h2>{{'overall_experience' | translate}}</h2>
+                    <div class="rate">
+                        <span [ngClass]="ratingIcon6 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon6()">
+                            <ion-icon class="zmdi zmdi-star"></ion-icon>
+                        </span>
+                        <span [ngClass]="ratingIcon7 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon7()">
+                            <ion-icon class="zmdi zmdi-star"></ion-icon>
+                        </span>
+                        <span [ngClass]="ratingIcon8 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon8()">
+                            <ion-icon class="zmdi zmdi-star"></ion-icon>
+                        </span>
+                        <span [ngClass]="ratingIcon9 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon9()">
+                            <ion-icon class="zmdi zmdi-star"></ion-icon>
+                        </span>
+                        <span [ngClass]="ratingIcon10 ? 'icon_box active' : 'icon_box'" (click)="toggleRatingIcon10()">
+                            <ion-icon class="zmdi zmdi-star"></ion-icon>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="add_feedback animate__animated animate__fadeInUp">
+                    <h2>{{'add_feedback' | translate}}</h2>
+                    <ion-item lines="none">
+                        <ion-textarea class="ion-text-start" auto-grow="true" rows="4" maxlength="140" placeholder="{{'write_your_feedback' | translate}}"></ion-textarea>
+                    </ion-item>
+                </div>
+                <ion-button size="large" shape="full" class="btn animate__animated animate__fadeInUp">{{'submit' | translate}}</ion-button>
+            </ion-card>
+        </ion-list>
+    </div>
+</ion-content>

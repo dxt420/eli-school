@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'register_now' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <div class="form">
+        <p class="ion-text-center">
+            <span class="animate__animated animate__fadeInUp">{{'register_now_message' | translate}} </span>
+            <br>
+            <span class="animate__animated animate__fadeInUp">{{'register_now_message2' | translate}}</span>
+        </p>
+
+        <ion-list lines="none">
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi  zmdi-smartphone-iphone ion-text-start"></ion-icon>
+                    <!--				<ion-label position="fixed">{{'phone_number' | translate}}</ion-label>-->
+                    <ion-input placeholder="{{'phone_number' | translate}}" type="text" value="+256 783095855"></ion-input>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-account ion-text-start"></ion-icon>
+                    <!--				<ion-label position="fixed">{{'full_name' | translate}}</ion-label>-->
+                    <ion-input placeholder="{{'full_name' | translate}}" type="name" value="Sam Smith"></ion-input>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+                    <!--				<ion-label position="fixed">{{'email_address' | translate}}</ion-label>-->
+                    <ion-input placeholder="{{'email_address' | translate}}" type="name" value="samsmith@mail.com"></ion-input>
+                </div>
+            </ion-item>
+            <ion-button size="large" shape="block" class="btn animate__animated animate__fadeInUp" (click)="continue()">{{'continue' | translate}}</ion-button>
+            <h4 class="ion-text-center animate__animated animate__fadeInUp" (click)="sign_in()">{{'back_to_sign_in' | translate}}</h4>
+        </ion-list>
+    </div>
+
+
+    <div class="form">
+        <p class="ion-text-center">
+            <span class="animate__animated animate__fadeInUp">{{'will_send_an_otp_on_above' | translate}} </span>
+            <br>
+            <span class="animate__animated animate__fadeInUp">{{'given_phone_number' | translate}}</span>
+        </p>
+    </div>
+</ion-content>

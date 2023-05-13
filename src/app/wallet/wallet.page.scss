@@ -1,0 +1,125 @@
+ion-header {
+    background: var(--white);
+
+    ion-toolbar ion-title {
+        .title_inner {
+            position: relative;
+            min-height: 60px;
+        }
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: fit-content;
+        }
+
+        ion-icon {
+            font-size: 1.4rem;
+            padding: 0 1px;
+            min-width: 20px;
+        }
+    }
+
+    .banner {
+        position: relative;
+        z-index: 99;
+        padding: 20px;
+
+        h2 {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: .5px;
+            padding-bottom: 4px;
+            color: var(--text-light2);
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 2.35rem;
+            color: var(--text-dark);
+
+        }
+    }
+
+    .button.btn {
+        width: fit-content;
+        position: fixed;
+        top: 143px;
+        z-index: 9999;
+        right: 16px;
+        font-size: .95rem;
+        min-width: 140px;
+        height: 48px;
+        text-transform: none;
+        font-weight: 500;
+    }
+}
+
+
+
+ion-list {
+    background: var(--transparent) !important;
+    margin: 0;
+    padding: 0;
+
+    h2 {
+        margin: 0;
+        color: var(--text-light);
+        font-weight: 500;
+        font-size: 0.95rem;
+        padding: 15px;
+    }
+
+    ion-item {
+        padding: 18px 15px 18px 15px;
+        background: var(--white);
+        --inner-padding-end: 0px;
+        --inner-min-height: unset !important;
+        --min-height: unset !important;
+        --padding-start: 0;
+        --highligh-color-focused: var(--transparent) !important;
+        margin-bottom: 5px;
+
+        .item_inner {
+            width: 100%;
+
+            h3 {
+                margin: 0;
+                font-size: 0.95rem;
+                font-weight: 600;
+                padding-bottom: 8px;
+                color: var(--text-dark);
+
+                span {
+                    color: #E43333;
+                    font-weight: 500;
+                    font-size: .92rem;
+                }
+            }
+
+            h4 {
+                margin: 0;
+                color: var(--text-light);
+                font-size: 0.8rem;
+                overflow: hidden;
+            }
+        }
+
+        &.money_added {
+            .item_inner {
+                h3 {
+                    span {
+                        color: #9FE41B;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}

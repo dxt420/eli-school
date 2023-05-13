@@ -1,0 +1,99 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'create_pill_remibder' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+
+    <ion-modal trigger="selectTime1">
+        <ng-template>
+            <ion-content>
+                <ion-datetime mode="md" #datetime presentation="time" [value]="dateValue" size="cover" (ionChange)="timeChanged1(datetime.value)">
+                    <!-- <div slot="title">My Custom Title</div> -->
+                    <ion-buttons slot="buttons">
+                        <ion-button (click)="close()">{{'cancel' | translate}}</ion-button>
+                        <ion-button (click)="select()">{{'ok' | translate}}</ion-button>
+                    </ion-buttons>
+                </ion-datetime>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+
+    <ion-modal trigger="selectTime2">
+        <ng-template>
+            <ion-content>
+                <ion-datetime mode="md" #datetime presentation="time" [value]="dateValue" size="cover" (ionChange)="timeChanged2(datetime.value)">
+                    <!-- <div slot="title">My Custom Title</div> -->
+                    <ion-buttons slot="buttons">
+                        <ion-button (click)="close()">{{'cancel' | translate}}</ion-button>
+                        <ion-button (click)="select()">{{'ok' | translate}}</ion-button>
+                    </ion-buttons>
+                </ion-datetime>
+            </ion-content>
+        </ng-template>
+    </ion-modal>
+
+    <div class="form">
+        <ion-list lines="none">
+            <ion-card class="animate__animated animate__fadeInUp">
+                <h2>{{'pill_name' | translate}}</h2>
+                <ion-item lines="none">
+                    <ion-input class="ion-text-start" placeholder="{{'enter_pill_name' | translate}}">
+                    </ion-input>
+                </ion-item>
+            </ion-card>
+
+            <ion-card class="animate__animated animate__fadeInUp">
+                <h2>{{'select_days' | translate}}</h2>
+                <ion-item lines="none" (click)="select_day()">
+                    <div class="item_inner d-flex">
+                        <ion-icon class="zmdi zmdi-calendar-alt ion-text-start"></ion-icon>
+                        <ion-label>
+                            <span>{{'select_days' | translate}}</span>
+                            <!-- <strong>Mon, Tue, Thu, Sat</strong> -->
+                        </ion-label>
+
+                    </div>
+                </ion-item>
+            </ion-card>
+
+            <ion-card class="animate__animated animate__fadeInUp">
+                <h2>{{'select_time' | translate}}</h2>
+
+                <div class="d-flex" style="align-items: flex-start">
+                    <div class="item_box">
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none" id="selectTime1">
+                            <div class="item_inner d-flex">
+                                <ion-icon class="zmdi zmdi-notifications ion-text-start"></ion-icon>
+                                <ion-input class="ion-text-start" placeholder="{{'select_pill_time' | translate}}" value="{{ selectTimeA }}" readonly>
+                                </ion-input>
+                            </div>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none" id="selectTime2">
+                            <div class="item_inner d-flex">
+                                <ion-icon class="zmdi zmdi-notifications ion-text-start"></ion-icon>
+                                <ion-input class="ion-text-start" placeholder="{{'select_pill_time' | translate}}" value="{{ selectTimeB }}" readonly>
+                                </ion-input>
+                            </div>
+                        </ion-item>
+                    </div>
+                    <div class="add_time_box end animate__animated animate__fadeInUp">
+                        <span>+</span>
+                    </div>
+                </div>
+            </ion-card>
+        </ion-list>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" shape="full" class="btn">
+        {{'set_reminder' | translate}}
+    </ion-button>
+</ion-footer>

@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'add_money' | translate}}</ion-title>
+    </ion-toolbar>
+    <div class="form animate__animated animate__fadeInUp">
+        <ion-list lines="none">
+            <ion-item lines="none">
+                <div class="item_inner">
+                    <ion-label mode="md">{{"enter_amount_to_aad" | translate}}</ion-label>
+                    <ion-input mode="md" type="name" value="$500"></ion-input>
+                </div>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <div class="add_money_via">
+        <ion-list lines="none">
+            <h2 class="animate__animated animate__fadeInUp">{{'add_money_via' | translate}}</h2>
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <div class="payment_option d-flex">
+                        <div class="img_box center_img">
+                            <img src="assets/images/payment_card.png" class="crop_img">
+                        </div>
+                        <h3 class="d-flex">
+                            Credit Card
+                        </h3>
+                    </div>
+                </div>
+            </ion-item>
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <div class="payment_option d-flex">
+                        <div class="img_box center_img">
+                            <img src="assets/images/payment_paypal.png" class="crop_img">
+                        </div>
+                        <h3>PayPal</h3>
+                    </div>
+                </div>
+            </ion-item>
+        
+        </ion-list>
+    </div>
+</ion-content>

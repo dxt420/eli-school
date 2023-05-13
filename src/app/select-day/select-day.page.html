@@ -1,0 +1,51 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-title>select-day</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content (click)="dismiss()">
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <h1 class="d-flex">
+        <span class="ion-text-center">{{'select_days' | translate}}</span>
+        <ion-icon class="zmdi zmdi-close end ion-text-end" (click)="dismiss()"></ion-icon>
+    </h1>
+
+    <ion-list lines="none">
+        <ion-item class="animate__animated animate__zoomIn">
+            <h3>{{'mon' | translate}}</h3>
+            <ion-checkbox checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item class="animate__animated animate__zoomIn">
+            <h3>{{'tue' | translate}}</h3>
+            <ion-checkbox checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item class="animate__animated animate__zoomIn">
+            <h3>{{'wed' | translate}}</h3>
+            <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item class="animate__animated animate__zoomIn">
+            <h3>{{'thu' | translate}}</h3>
+            <ion-checkbox checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item class="animate__animated animate__zoomIn">
+            <h3>{{'fri' | translate}}</h3>
+            <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item class="animate__animated animate__zoomIn">
+            <h3>{{'sat' | translate}}</h3>
+            <ion-checkbox checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item class="animate__animated animate__zoomIn" style="margin: 0 auto;">
+            <h3>{{'sun' | translate}}</h3>
+            <ion-checkbox></ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    <ion-button size="large" shape="full" class="btn animate__animated animate__fadeInUp" (click)="dismiss()">
+        {{'done' | translate}}
+    </ion-button>
+</ion-footer>

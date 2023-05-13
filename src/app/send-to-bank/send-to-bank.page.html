@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            {{'send_to_bank' | translate}}
+        </ion-title>
+    </ion-toolbar>
+    <div class="banner">
+        <h2 class="animate__animated animate__fadeInUp">{{'available_balance' | translate}}</h2>
+        <h1 class="animate__animated animate__fadeInUp">$ 520.50</h1>
+    </div>
+</ion-header>
+
+<ion-content class="bg_color">
+    <div class="form">
+        <ion-list lines="none">
+            <ion-card>
+                <h2>{{'bank_info' | translate}}</h2>
+
+                <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                    <div class="item_inner">
+                        <ion-label mode="md">{{"account_holder_name" | translate}}</ion-label>
+                        <ion-input mode="md" type="name" value="Geroge Anderson"></ion-input>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                    <div class="item_inner">
+                        <ion-label mode="md">{{"bank_name" | translate}}</ion-label>
+                        <ion-input mode="md" type="name" value="HBNC Bank of New York"></ion-input>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                    <div class="item_inner">
+                        <ion-label mode="md">{{"branch_code" | translate}}</ion-label>
+                        <ion-input mode="md" type="name" value="NYC123456"></ion-input>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                    <div class="item_inner">
+                        <ion-label mode="md">{{"account_number" | translate}}</ion-label>
+                        <ion-input mode="md" type="name" value="1234 5678 1234 6789"></ion-input>
+                    </div>
+                </ion-item>
+
+            </ion-card>
+
+            <ion-card>
+                <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                    <div class="item_inner">
+                        <ion-label mode="md" position="stacked">{{"enter_amount_transfer" | translate}}</ion-label>
+                        <ion-input mode="md" type="name" value="$ 500"></ion-input>
+                    </div>
+                </ion-item>
+            </ion-card>
+        </ion-list>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" expand="full" class="btn">{{'send_to_bank' | translate}}</ion-button>
+</ion-footer>

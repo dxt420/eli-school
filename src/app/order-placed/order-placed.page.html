@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar>
+        <!--
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+-->
+        <ion-title>{{'order_placed' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <div class="container ion-text-center">
+        <div class="img_box animate__animated animate__zoomIn">
+            <img src="assets/images/order_places.png">
+        </div>
+        <h1 class="animate__animated animate__fadeInUp">{{'your_order_placed' | translate}} !!</h1>
+        <p>
+            <span class="animate__animated animate__fadeInUp">{{'your_order_has_been_placed' | translate}}</span>
+            <br>
+            <span class="animate__animated animate__fadeInUp">{{'successfull' | translate}}</span>
+            <br>
+            <span class="animate__animated animate__fadeInUp">{{'visit_my_order' | translate}}</span>
+            <br>
+            <span class="animate__animated animate__fadeInUp">{{'to_check_order_status' | translate}}</span>
+        </p>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <h2 class="ion-text-center animate__animated animate__fadeInUp" (click)="orders()"> {{'my_orders' | translate}}</h2>
+    <ion-button size="large" shape="full" class="btn animate__animated animate__fadeInUp" (click)="continue_shopping()">
+        {{'continue_shopping' | translate}}
+    </ion-button>
+</ion-footer>

@@ -1,0 +1,127 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-title>{{'account' | translate}}</ion-title>
+    </ion-toolbar>
+    <div class="profile d-flex" (click)="my_profile()">
+
+        <div class="img_box center_img">
+            <img src="assets/images/nurse.png" class="crop_img">
+        </div>
+        <div class="text_box">
+            <p>School Nurse</p>
+            <h2> Dr. Emily <br>Smith</h2>
+            <p>St. Peters Nsambya</p>
+        </div>
+    </div>
+  
+</ion-header> -->
+
+<ion-header class="bg_transparent">
+
+ 
+
+    <div class="d-flex profile">
+        <div class="img_box center_img" >
+            <img *ngFor="let s of school" src="{{s.school_logo}}" class="crop_img">
+        </div>
+        <div class="text_box">
+            <h1 *ngFor="let s of school" class="d-flex animate__animated animate__fadeInUp">
+                <span ></span>{{s.school_name}}
+                <!-- <ion-icon class="zmdi zmdi-more-vert end ion-text-end"></ion-icon> -->
+                <ion-icon class="zmdi end ion-text-end" name="checkmark-circle-outline"></ion-icon>
+            </h1>
+            <!-- <h2 class="animate__animated animate__fadeInUp" (click)="lab_profile()">{{"view_profile" | translate}}</h2> -->
+        </div>
+    </div>
+
+    <div class="today-task">
+        <ion-row class="animate__animated animate__fadeInUp d-flex">
+            <ion-col size="6">
+                <div class="text">
+                    <!-- <h3>0 {{"tests" | translate}}</h3>
+                    <h4>{{"booked_today" | translate}}</h4> -->
+                    <!-- <h3>Labaratory  <br>Tests</h3> -->
+                    <!-- <h4>Booked Today</h4> -->
+                </div>
+
+              
+            </ion-col>
+        </ion-row>
+
+        <img src="assets/images/vector_hospital.png" class="end animate__animated animate__fadeInUp">
+
+    </div>
+  
+</ion-header>
+
+<ion-content fullscreen class="bg_color">
+    <ion-row>
+        <ion-col size="6" class="animate__animated animate__zoomIn" (click)="my_appointments()">
+            <div class="menu_box">
+                <h2>Consultations</h2>
+                <h3 class="d-flex">Student Consultations</h3>
+                <ion-icon class="zmdi zmdi-assignment-account ion-text-end end"></ion-icon>
+            </div>
+        </ion-col>
+        <ion-col size="6" class="animate__animated animate__zoomIn" (click)="my_lab_tests()">
+            <div class="menu_box">
+                <h2>Lab Tests</h2>
+                <h3 class="d-flex">Nearby Labaratories</h3>
+                <ion-icon class="zmdi zmdi-assignment-check ion-text-end end"></ion-icon>
+            </div>
+        </ion-col>
+        <ion-col size="6" class="animate__animated animate__zoomIn" (click)="wallet()">
+            <div class="menu_box">
+                <h2>Wallet</h2>
+                <h3 class="d-flex">Credits and Expense</h3>
+                <ion-icon class="zmdi zmdi-balance-wallet ion-text-end end"></ion-icon>
+            </div>
+        </ion-col>
+
+        <ion-col size="6" class="animate__animated animate__zoomIn" (click)="orders()">
+            <div class="menu_box">
+                <h2>My Orders</h2>
+                <h3 class="d-flex">Order Status</h3>
+                <ion-icon class="zmdi zmdi-bike ion-text-end end"></ion-icon>
+            </div>
+        </ion-col>
+
+     
+
+
+     
+
+        <ion-col size="6" class="animate__animated animate__zoomIn" (click)="contactUs()">
+            <div class="menu_box">
+                <h2>Contact Us</h2>
+                <h3 class="d-flex">Let us help you</h3>
+                <ion-icon class="zmdi zmdi-email ion-text-end end">{{'order_status' | translate}}</ion-icon>
+            </div>
+        </ion-col>
+
+        <ion-col size="6" class="animate__animated animate__zoomIn" (click)="termsConditions()">
+            <div class="menu_box">
+                <h2>Conditions</h2>
+                <h3 class="d-flex">Company policies</h3>
+                <ion-icon class="zmdi zmdi-assignment ion-text-end end"></ion-icon>
+            </div>
+        </ion-col>
+
+      
+        <ion-col size="6" class="animate__animated animate__zoomIn" (click)="change_language()">
+            <div class="menu_box">
+                <h2>Language</h2>
+                <h3 class="d-flex"> Change language</h3>
+                <ion-icon class="zmdi zmdi-globe ion-text-end end"></ion-icon>
+            </div>
+        </ion-col>
+
+        <ion-col size="6" class="animate__animated animate__zoomIn" (click)="logout()">
+            <div class="menu_box">
+                <h2>Logout</h2>
+                <h3 class="d-flex">See you again</h3>
+                <ion-icon class="zmdi zmdi-open-in-new ion-text-end end"></ion-icon>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-content>

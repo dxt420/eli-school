@@ -1,0 +1,940 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            {{'shop_by_category' | translate}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="bg_color" fullscreen>
+    <div class="container_new d-flex">
+        <ion-segment scrollable mode="ios" [(ngModel)]="tab">
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="otc">
+                <div class="category_img center_img">
+                    <img src="assets/images/Otc.png" class="crop_img">
+                    <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+                </div>
+            </ion-segment-button>
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="diabetes">
+                <div class="category_img center_img">
+                    <img src="assets/images/Diabetes_Medicine.png" class="crop_img">
+                    <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+                </div>
+            </ion-segment-button>
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Baby_Mother">
+                <div class="category_img center_img">
+                    <img src="assets/images/Baby_Mother.png" class="crop_img">
+                    <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+                </div>
+            </ion-segment-button>
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Personal_Care">
+                <div class="category_img center_img">
+                    <img src="assets/images/Personal_Care.png" class="crop_img">
+                    <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+                </div>
+            </ion-segment-button>
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Wellness_Items">
+                <div class="category_img center_img">
+                    <img src="assets/images/Wellness_Items.png" class="crop_img">
+                    <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+                </div>
+            </ion-segment-button>
+
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="otc1">
+                <div class="category_img center_img">
+                    <img src="assets/images/Otc.png" class="crop_img">
+                    <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+                </div>
+            </ion-segment-button>
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="diabetes1">
+                <div class="category_img center_img">
+                    <img src="assets/images/Diabetes_Medicine.png" class="crop_img">
+                    <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+                </div>
+            </ion-segment-button>
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Baby_Mother1">
+                <div class="category_img center_img">
+                    <img src="assets/images/Baby_Mother.png" class="crop_img">
+                    <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+                </div>
+            </ion-segment-button>
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Personal_Care1">
+                <div class="category_img center_img">
+                    <img src="assets/images/Personal_Care.png" class="crop_img">
+                    <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+                </div>
+            </ion-segment-button>
+            <ion-segment-button class="animate__animated animate__zoomIn" mode="ios" value="Wellness_Items1">
+                <div class="category_img center_img">
+                    <img src="assets/images/Wellness_Items.png" class="crop_img">
+                    <ion-icon class="zmdi zmdi-chevron-right"></ion-icon>
+                </div>
+            </ion-segment-button>
+        </ion-segment>
+
+
+        <div class="tab_content end" [ngSwitch]="tab">
+            <ion-list lines="none" *ngSwitchCase="'otc'">
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+
+            <ion-list lines="none" *ngSwitchCase="'diabetes'">
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+
+            <ion-list lines="none" *ngSwitchCase="'Baby_Mother'">
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+
+            <ion-list lines="none" *ngSwitchCase="'Wellness_Items'">
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+
+            <ion-list lines="none" *ngSwitchCase="'Personal_Care'">
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+
+
+
+
+
+
+
+            <ion-list lines="none" *ngSwitchCase="'otc1'">
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+
+            <ion-list lines="none" *ngSwitchCase="'diabetes1'">
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+
+            <ion-list lines="none" *ngSwitchCase="'Baby_Mother1'">
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+
+            <ion-list lines="none" *ngSwitchCase="'Wellness_Items1'">
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+
+            <ion-list lines="none" *ngSwitchCase="'Personal_Care1'">
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Frist Aid</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Health Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Womens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Sexual Wellness</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Other</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+
+                <ion-item class="animate__animated animate__fadeInRight" (click)="product_list()">
+                    <div class="item_inner d-flex">
+                        <h2>Mens Care</h2>
+                        <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </div>
+    </div>
+
+</ion-content>

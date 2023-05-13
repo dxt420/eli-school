@@ -1,0 +1,116 @@
+ion-header {
+    ion-toolbar ion-title {
+        .title_inner {
+            span {
+                &.title_center {
+                    position: absolute;
+                    left: 0;
+                    top: -3px;
+                    right: 0;
+                    width: fit-content;
+                    margin: auto;
+                }
+                &.cart_icon {
+                    position: relative;
+                    min-width: 27px;
+                    ion-badge {
+                        background: var(--red_color);
+                        --background: var(--transparent);
+                        --color: var(--white);
+                        --padding-bottom: 0;
+                        --padding-end: 0;
+                        --padding-start: 0;
+                        --padding-top: 0;
+                        border-radius: 50%;
+                        width: 15px;
+                        height: 15px;
+                        display: block;
+                        position: absolute;
+                        top: 12px;
+                        font-size: 0.7rem;
+                        line-height: 16px;
+                        right: 0;
+                    }
+                    ion-icon {
+                        position: relative;
+                        top: 5px;
+                        font-size: 1.35rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.prescription_required {
+    position: absolute;
+    right: 12px;
+    z-index: 99;
+    top: 12px;
+    width: 15px;
+}
+
+.item_row {
+    ion-row {
+        padding: 6px 6px;
+        ion-col {
+            padding: 7px 7px;
+            .item {
+                background: var(--white);
+                border-radius: 10px;
+                overflow: hidden;
+                text-align: unset !important;
+                .item_content {
+                    padding: 10px 13px;
+                    position: relative;
+                    padding-bottom: 0;
+                    .img_box {
+                        width: 115px;
+                        height: 115px;
+                        margin: 0 auto;
+                        position: relative;
+                        margin-bottom: 12px;
+                        img {
+                            width: 108px;
+                            display: block;
+                            margin: auto;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            top: 0;
+                            height: auto;
+                        }
+                    }
+                    h2 {
+                        margin: 0;
+                        color: var(--text-dark);
+                        font-size: 0.9rem;
+                        overflow: hidden;
+                    }
+                }
+                .item_footer {
+                    h3 {
+                        margin: 0;
+                        font-size: 1rem;
+                        min-width: 50%;
+                        text-align: justify !important;
+                        padding-left: 13px;
+                        font-weight: 600;
+                    }
+                    h4 {
+                        color: var(--white);
+                        background: var(--primary);
+                        margin: 0;
+                        font-size: 1.8rem;
+                        height: 34px;
+                        line-height: 31px;
+                        min-width: 35px;
+                        border-radius: 10px 0;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}

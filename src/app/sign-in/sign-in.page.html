@@ -1,0 +1,78 @@
+<!--
+<ion-header>
+  <ion-toolbar>
+    <ion-title>sign-in</ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+
+<ion-content class="bg_color">
+    <div class="banner">
+        <div class="logo_box">
+            <img src="assets/images/logo.png" class="animate__animated animate__zoomIn wow logo_img" data-wow-duration="0.3s">
+        </div>
+
+        <div class="banner_images">
+            <img src="assets/images/hero_image.png" class="animate__animated animate__slideInUp">
+        </div>
+
+
+    </div>
+    <div class="form">
+        <!-- <p class="ion-text-center">
+            <span class="animate__animated animate__fadeInUp">{{'register_now_message' | translate}} </span>
+            <br>
+            <span class="animate__animated animate__fadeInUp">{{'register_now_message2' | translate}}</span>
+        </p> -->
+        <!-- <form #form="ngForm" (ngSubmit)="login(form)"> -->
+            <form *ngIf='!userData && !tokenExists' [formGroup]='loginForm' #ourLoginDir='ngForm' (submit)='handleSubmit($event, ourLoginDir, loginForm)'>
+        <ion-list lines="none">
+            <!-- <p *ngIf='loginErrors'>{{ loginErrors }}</p> -->
+         
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+                    <!--				<ion-label position="fixed">{{'email_address' | translate}}</ion-label>-->
+                    <ion-input name="email" placeholder="{{'email_address' | translate}}" id='email' formControlName='email' type="text" ngModel required></ion-input>
+                </div>
+               
+            </ion-item>
+            <!-- <div *ngIf='email.invalid && (email.dirty || email.touched)'>
+                <div *ngIf='email.errors.required'>
+                    Email is required.
+                </div>
+                <div *ngIf='email.errors.maxlength'>
+                    Max length is 280
+                </div>
+                <div *ngIf='email.errors.minlength'>
+                    Min length is 4
+                </div>
+            </div> -->
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-account ion-text-start"></ion-icon>
+                    <!--				<ion-label position="fixed">{{'full_name' | translate}}</ion-label>-->
+                    <ion-input  id='password' formControlName='password' name="password" placeholder="Password" type="password" ngModel required></ion-input>
+                    <!-- <div *ngIf='password.invalid && (password.dirty || password.touched)'>
+                        <div *ngIf='password.errors.required'>
+                            Password is required.
+                        </div>
+                        <div *ngIf='password.errors.maxlength'>
+                            Max length is 280
+                        </div>
+                        <div *ngIf='password.errors.minlength'>
+                            Min length is 4
+                        </div>
+                    </div> -->
+                </div>
+            </ion-item>
+            <ion-button type="submit" size="large" shape="block" class="btn animate__animated animate__fadeInUp" [disabled]='loginForm.invalid'>{{'continue' | translate}}</ion-button>
+            <!-- <button type='button' class='btn btn-default' (click)='ourLoginDir.resetForm({})'>Reset</button> -->
+            <!-- <h4 class="ion-text-center animate__animated animate__fadeInUp" (click)="sign_in()">{{'back_to_sign_in' | translate}}</h4> -->
+            <!-- <h4 class="ion-text-center animate__animated animate__fadeInUp" (click)="sign_in()">Sign In</h4> -->
+        </ion-list>
+
+    </form>
+    </div>
+
+</ion-content>

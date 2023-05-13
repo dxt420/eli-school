@@ -1,0 +1,226 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            .title_inner {
+                display: flex !important;
+                align-items: center;
+                width: 100%;
+                line-height: 60px;
+                min-height: 60px;
+                h3 {
+                    margin: 0;
+                    position: relative;
+                    overflow: hidden;
+                    min-width: 40px;
+                    height: 34px;
+                    ion-icon {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto;
+                        min-width: unset;
+                        text-align: center;
+                        font-size: 1.55rem !important;
+                        &.zmdi-bookmark {
+                            display: none;
+                        }
+                    }
+                    &.active {
+                        ion-icon {
+                            &.zmdi-bookmark {
+                                display: inline;
+                                color: var(--secondary);
+                            }
+                            &.zmdi-bookmark-outline {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.banner {
+    padding: 18px 18px 30px 18px;
+    background: var(--white);
+    align-items: flex-end;
+    .doctor_details {
+        width: 100%;
+        max-width: calc(50% - 0px);
+        .img_box {
+            width: 100%;
+            max-width: 150px;
+            height: 175px;
+            border-radius: 11px;
+            margin-bottom: 18px;
+        }
+        h2 {
+            margin: 0;
+            color: var(--text-dark);
+            font-size: 1.53rem;
+            font-weight: 600;
+            line-height: 31px;
+            padding-bottom: 10px;
+        }
+        h3 {
+            margin: 0;
+            color: var(--text-light2);
+            font-size: 0.94rem;
+            font-weight: 400;
+        }
+    }
+    .other_details {
+        width: 100%;
+        .text_box {
+            padding-bottom: 40px;
+            h3 {
+                margin: 0;
+                color: var(--text-light2);
+                font-size: 0.94rem;
+                font-weight: 400;
+                letter-spacing: 0;
+                padding-bottom: 7px;
+            }
+            h4 {
+                margin: 0;
+                color: var(--text-black);
+                font-size: 0.95rem;
+                font-weight: 400;
+            }
+            &:last-child {
+                padding-bottom: 0;
+            }
+            &.feedback {
+                h4 {
+                    color: var(--text-light2);
+                    ion-icon {
+                        font-size: 1.5rem;
+                        width: 15px;
+                        min-width: 15px;
+                        color: var(--text-light2);
+                    }
+                    span {
+                        display: flex;
+                        align-items: center;
+                        color: var(--yelow_color);
+                        font-weight: 500;
+                        font-size: 0.95rem;
+                        ion-icon {
+                            min-width: 20px;
+                            font-size: 1.1rem;
+                            color: var(--yelow_color);
+                        }
+                    }
+                }
+            }
+            &.availability {
+                h4 {
+                    ion-icon {
+                        font-size: 1.5rem;
+                        width: 15px;
+                        min-width: 15px;
+                        color: var(--text-light2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.banner_details {
+    width: 100%;
+}
+
+.tab_content {
+    padding-top: 8px;
+    ion-list {
+        padding: 0;
+        background: var(--transparent) !important;
+        margin: 0;
+        padding: 0;
+        ion-card {
+            margin: 0;
+            width: 100%;
+            margin-bottom: 8px;
+            border-radius: 0;
+            padding: 18px;
+            box-shadow: none;
+            h2 {
+                margin: 0;
+                color: var(--text-light2);
+                font-size: 0.94rem;
+                font-weight: 400;
+                letter-spacing: 0;
+                padding-bottom: 15px;
+            }
+            h5 {
+                margin: 0;
+                color: var(--secondary);
+                font-size: 0.95rem;
+            }
+            .text_box {
+                padding-bottom: 15px;
+                h3 {
+                    margin: 0;
+                    color: var(--text-dark);
+                    font-size: 1rem;
+                    letter-spacing: 0;
+                    padding-bottom: 3px;
+                    ion-icon {
+                        font-size: 1.5rem;
+                        width: 15px;
+                        min-width: 15px;
+                        color: var(--text-light2);
+                    }
+                }
+                h4 {
+                    margin: 0;
+                    color: var(--text-light);
+                    font-size: 0.92rem;
+                }
+            }
+            &.services {
+                .text_box {
+                    padding-bottom: 7px;
+                    h3 {
+                        font-size: 0.95rem;
+                    }
+                }
+                h5 {
+                    padding-top: 8px;
+                }
+            }
+        }
+    }
+}
+
+ion-footer {
+    --animate-duration: 0.4s !important;
+}
+
+.empty-view {
+    width: fit-content;
+    margin: auto;
+    height: fit-content;
+    position: relative;
+    padding: 0 20px;
+    padding-top: 33px;
+    img {
+        width: 100px;
+        margin: auto;
+    }
+    span {
+        display: block;
+        text-align: center;
+    }
+    button {
+        margin-top: 50px;
+        span {
+            display: unset !important;
+        }
+    }
+}

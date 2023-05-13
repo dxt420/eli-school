@@ -1,0 +1,108 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <h3 class="end">
+                    <ion-icon class="zmdi zmdi-phone ion-text-end"></ion-icon>
+                </h3>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen>
+    <div class="banner d-flex animate__animated animate__fadeInUp">
+        <div class="doctor_details d-flex">
+            <div class="img_box center_img animate__animated animate__fadeInUp">
+                <img src="assets/images/lab_profile/lab_profile.png" class="crop_img">
+            </div>
+
+            <div class="text_box" style="width: 100%;">
+                <h2 class="animate__animated animate__fadeInUp">City Cure <br> Labs</h2>
+                <h3 class="animate__animated animate__fadeInUp d-flex">
+                    <ion-icon class="zmdi zmdi-pin"></ion-icon>
+                    Williamson Bridge
+                </h3>
+                <div class="other_details">
+                    <div class="text_box availability animate__animated animate__fadeInUp">
+                        <h3 class="d-flex">{{'availability' | translate}}
+                            <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
+                        </h3>
+                        <h4 class="d-flex">
+                            12:00 to 13:00
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab_content">
+        <!--About section start> -->
+        <ion-list lines="none">
+            <ion-card class=" animate__animated animate__fadeInUp">
+                <div class="address">
+                    <h2>{{'about' | translate}}</h2>
+                    <div class="text_box animate__animated animate__fadeInUp">
+                        <h4 class="d-flex" style="line-height: 24px; font-weight: 400;">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        </h4>
+                    </div>
+                    <h5>{{'read_more' | translate}}</h5>
+                </div>
+            </ion-card>
+
+            <ion-card class="services">
+                <h2>{{'facilities' | translate}}</h2>
+
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3>Sample Pickup</h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3>E-Reports</h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3>Report Deivery</h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3>Parking Spot</h3>
+                </div>
+                <div class="text_box animate__animated animate__fadeInUp">
+                    <h3>Reminder Call</h3>
+                </div>
+                <h5>+ 5 {{'more' | translate}}</h5>
+            </ion-card>
+
+            <ion-card class="address_box animate__animated animate__fadeInUp">
+                <div class="address d-flex">
+                    <div class="">
+                        <h2 class="animate__animated animate__fadeInUp">{{'address' | translate}}</h2>
+                        <h3 class="d-flex animate__animated animate__fadeInUp">
+                            <ion-icon class="zmdi zmdi-pin"></ion-icon>
+                            Walter street, Wallington, New York.
+                        </h3>
+                    </div>
+                    <h5 class="end">
+                        <ion-icon class="zmdi zmdi-navigation ion-text-end"></ion-icon>
+                    </h5>
+                </div>
+
+                <div class="map_box">
+                    <img src="assets/images/map.png">
+                    <ion-icon style="top:34%; left: 46%;" class="animate__animated animate__zoomIn"></ion-icon>
+                </div>
+            </ion-card>
+        </ion-list>
+        <!--About section end> -->
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-button size="large" shape="full" class="btn" (click)="select_test()">
+        <ion-icon slot="start" class="zmdi zmdi-search"></ion-icon>
+        {{'search_for_test' | translate}}
+    </ion-button>
+</ion-footer>

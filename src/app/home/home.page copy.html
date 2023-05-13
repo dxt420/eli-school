@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <div class="location" >
+                    <h2 class="d-flex">
+                        <!-- <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon> -->
+                        <!-- <div class="img_box center_img">
+                            <img src="assets/images/3.png" class="crop_img">
+                        </div> -->
+                        <ion-avatar *ngFor="let s of school">
+                            <img alt="Silhouette of a person's head" src="{{s.school_logo}}" />
+                          </ion-avatar>
+                        <span *ngFor="let s of school">
+                            {{s.school_name}}
+                        </span>
+                    </h2>
+                </div>
+                
+            </div>
+        </ion-title>
+    </ion-toolbar>
+
+    <div class="banner">
+        <div class="banner_text">
+            <!-- <h3 class="animate__animated animate__fadeInUp">{{'hello' | translate}}, Dr. Emily</h3> -->
+            <h2 class="animate__animated animate__fadeInUp">{{'find_student' | translate}}</h2>
+        </div>
+        <div class="search_box d-flex animate__animated animate__fadeInUp" (click)="search()">
+            <ion-icon name="search-outline" class="ion-text-start"></ion-icon>
+            <h2>{{'search_student' | translate}}</h2>
+        </div>
+    </div>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-list lines="none">
+    <h2>{{'scholars' | translate}}</h2>
+
+    <ion-item (click)="student_profile()" *ngFor="let student of students" class="animate__animated animate__fadeInUp item-avatar">
+      
+        <div class="item_inner d-flex">
+            <div class="img_box center_img">
+                <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
+            </div>
+            <!-- <ion-avatar>
+                <img alt="Silhouette of a person's head" src="assets/images/3.png" class="crop_img" />
+              </ion-avatar> -->
+             
+            <div class="text_box">
+                <div class="d-flex" style="align-items: flex-start;">
+                    <div class="" style="width: 100%; padding-bottom: 10px;">
+                        <h2 class="d-flex" > {{student.name}}
+
+                            <ion-icon class="zmdi zmdi-more-vert end ion-text-end"></ion-icon>
+                        </h2>
+                        <h3 >Student ID: {{student.id}}</h3>
+                    </div>
+                    <!-- <div class="icon-box end">
+                        <ion-icon class="zmdi zmdi-close"></ion-icon>
+                        &nbsp;&nbsp;&nbsp;
+                        <ion-icon class="zmdi zmdi-check"></ion-icon>
+                    </div> -->
+                </div>
+
+                <h4 class="d-flex">
+                    <span >status : {{student.insurance}} </span>
+
+                   
+
+                    <!-- <span class="end">
+                        <span >Male </span>
+                       
+                    </span> -->
+                </h4>
+            </div>
+        </div>
+    </ion-item>
+
+    </ion-list>
+
+ 
+</ion-content>

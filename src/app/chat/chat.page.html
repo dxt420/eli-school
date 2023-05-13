@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar>
+        <div class="toolbar_inner d-flex">
+            <ion-buttons slot="start">
+                <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+            </ion-buttons>
+
+            <div class="d-flex user_details">
+                <div class="img_box center_img">
+                    <img src="assets/images/doc1.png" class="crop_img">
+                </div>
+                <div class="text_box">
+                    <h2 class="animate__animated animate__fadeInUp">Dr. Joseph Williamson</h2>
+                    <h3 class="animate__animated animate__fadeInUp">12 June, 12:10 pm | Chest Pain</h3>
+                </div>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="bg_color">
+    <div class="chat_container d-flex">
+        <div class="chat_box d-flex animate__animated animate__zoomIn received">
+            <div class="chat">
+                <h2>Hello Emilli <br> I hope you remember <br>about your appoitment <br> today with us.</h2>
+                <p>12:15 pm</p>
+            </div>
+        </div>
+
+        <div class="chat_box d-flex animate__animated animate__zoomIn send">
+            <div class="chat">
+                <h2>Hello Doctor, <br>Yes i remember. <br> I will be there right on time</h2>
+                <p>12:15 pm</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer_img animate__animated animate__slideInUp">
+        <img src="assets/images/chat_footer_img.png">
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp"> 
+    <div class="form">
+        <ion-list lines="none d-flex">
+            <ion-item lines="none">
+                <ion-textarea rows="1" auto-grow="true" type="text"  placeholder="{{'write_your_message' | translate}}">
+                </ion-textarea>
+            </ion-item>
+            <div class="send_btn end">
+                <ion-icon class="zmdi zmdi-mail-send"></ion-icon>
+            </div>
+        </ion-list>
+    </div>
+</ion-footer>

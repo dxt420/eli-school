@@ -1,0 +1,76 @@
+<ion-header class="bg_transparent">
+ 
+
+    <div class="d-flex profile">
+        <div class="img_box center_img"  *ngFor="let s of school">
+            <img src="{{s.school_logo}}" class="crop_img">
+        </div>
+        <div class="text_box">
+            <h1 class="d-flex animate__animated animate__fadeInUp" *ngFor="let s of school">
+                <span ></span>{{s.school_name}}
+                <!-- <ion-icon class="zmdi zmdi-more-vert end ion-text-end"></ion-icon> -->
+                <ion-icon class="zmdi end ion-text-end" name="checkmark-circle-outline"></ion-icon>
+            </h1>
+            <!-- <h2 class="animate__animated animate__fadeInUp" (click)="lab_profile()">{{"view_profile" | translate}}</h2> -->
+        </div>
+    </div>
+    <div class="today-task">
+        <ion-row class="animate__animated animate__fadeInUp d-flex">
+            <ion-col size="6">
+                <div class="text">
+                    <!-- <h3>0 {{"tests" | translate}}</h3>
+                    <h4>{{"booked_today" | translate}}</h4> -->
+                    <h3>0 Consultations</h3>
+                    <h4>Booked Today</h4>
+                </div>
+
+                <div class="text">
+                    <h3>0 Tests</h3>
+                    <h4>Pickups Today</h4>
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <img src="assets/images/vector_hospital.png" class="end animate__animated animate__fadeInUp">
+
+    </div>
+</ion-header>
+
+<ion-content class="bg_color">
+
+    <ion-list lines="none">
+        <h2>Students</h2>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="student_profile(student)" *ngFor="let student of students">
+            <div class="item_inner d-flex">
+                <div class="img_box center_img">
+                    <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
+                </div>
+
+                <div class="text_box">
+                    <div class="d-flex" style="align-items: flex-start;">
+                        <div class="" style="width: 100%; padding-bottom: 10px;">
+                            <h2 class="d-flex">{{student.name}}
+                                <!-- <ion-icon class="zmdi zmdi-phone end ion-text-end"></ion-icon> -->
+                            </h2>
+                            <h3>0 tests | 0 consultations | 0 prescriptions </h3>
+                          
+                        </div>
+                    </div>
+                    <h4 class="d-flex">
+                        <span>{{student.student_class}} </span>
+                        <span class="end">
+                            <!-- <ion-icon class="zmdi medkit-outline ion-text-start"></ion-icon>  -->
+                            <ion-icon name="medkit-outline"></ion-icon>
+                            {{student.insurance}}
+                        </span>
+                    </h4>
+                </div>
+            </div>
+        </ion-item>
+
+      
+    </ion-list>
+
+
+</ion-content>
+

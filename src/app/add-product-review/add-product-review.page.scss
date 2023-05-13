@@ -1,0 +1,114 @@
+.form {
+    width: 100%;
+
+    ion-list {
+        padding-top: 8px;
+
+        ion-card {
+            padding: 0;
+            background: var(--white);
+            border-radius: 0;
+            box-shadow: none;
+            margin: 0;
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 0;
+
+            .item_detail {
+                padding: 20px;
+                padding-bottom: 0px;
+
+                .img_box {
+                    width: 100%;
+                    min-width: 120px;
+                    max-width: 120px;
+
+                    img {
+                        max-width: 83px;
+                        margin: 0 auto;
+                        display: block;
+                        margin-top: 26px;
+                    }
+                }
+
+                .text_box {
+                    width: 100%;
+
+                    h3 {
+                        margin: 0;
+                        color: var(--text-dark);
+                        font-size: 1.53rem;
+                        font-weight: 600;
+                    }
+
+                    h2 {
+                        margin: 0;
+                        color: var(--text-light2);
+                        font-size: 0.94rem;
+                        font-weight: 400;
+                        padding-bottom: 7px;
+                    }
+                }
+            }
+
+            .overall_experience {
+                padding: 20px;
+                padding-bottom: 10px;
+
+                h2 {
+                    margin: 0;
+                    color: var(--text-light2);
+                    font-size: 0.94rem;
+                    font-weight: 400;
+                    letter-spacing: 0;
+                    padding-bottom: 15px;
+                }
+
+                .rate {
+                    .icon_box {
+                        ion-icon {
+                            color: #dddddd;
+                            font-size: 2.54rem;
+                        }
+
+                        &.active {
+                            ion-icon {
+                                color: var(--yelow_color) !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .add_feedback {
+                padding: 20px;
+
+                h2 {
+                    margin: 0;
+                    color: var(--text-light2);
+                    font-size: 0.94rem;
+                    font-weight: 400;
+                    letter-spacing: 0;
+                    padding-bottom: 20px;
+                }
+
+                ion-item {
+                    &.item-has-placeholder {
+                        margin-bottom: 0;
+                        background: var(--bg-color) !important;
+                        border-radius: 3px;
+
+                        ion-textarea,
+                        ion-input {
+                            --placeholder-opacity: 1;
+                            font-size: 1rem !important;
+                            margin: 0;
+                        }
+
+                    }
+                }
+            }
+
+        }
+    }
+}

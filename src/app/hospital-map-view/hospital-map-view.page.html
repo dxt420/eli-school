@@ -1,0 +1,430 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'hospitals_near_you' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg_color" fullscreen="true">
+    <div class="map">
+        <img src="assets/images/map.png">
+
+        <ion-icon class="animate__animated animate__zoomIn" style="top:20%; left: 20%;"></ion-icon>
+        <ion-icon class="animate__animated animate__zoomIn" style="top:15%; left: 59%;"></ion-icon>
+        <ion-icon class="animate__animated animate__zoomIn" style="top:34%; left: 46%;"></ion-icon>
+        <ion-icon class="animate__animated animate__zoomIn" style="top:41%; left: 77%;"></ion-icon>
+        <ion-icon class="animate__animated animate__zoomIn active" style="top:44%; left: 43%;"></ion-icon>
+        <ion-icon class="animate__animated animate__zoomIn" style="top:57%; left: 78%;"></ion-icon>
+        <ion-icon class="animate__animated animate__zoomIn" style="top:60%; left: 26%;"></ion-icon>
+    </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+    <ion-list lines="none">
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Apple Hospital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address">At Walter street, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>City Light Eye Care</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Silver Soul Hopital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Apple Hospital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address">At Walter street, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>City Light Eye Care</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Silver Soul Hopital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Apple Hospital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address">At Walter street, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>City Light Eye Care</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Silver Soul Hopital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Apple Hospital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address">At Walter street, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>City Light Eye Care</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Silver Soul Hopital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Apple Hospital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address">At Walter street, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>City Light Eye Care</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Silver Soul Hopital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Apple Hospital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address">At Walter street, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>City Light Eye Care</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="hospital_info()">
+            <div class="item_inner">
+                <div class="item_header d-flex">
+                    <div class="text_box">
+                        <h2>Silver Soul Hopital</h2>
+                        <h3 class="d-flex">General Hospital
+                            <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                {{'call_now' | translate}}
+                            </span>
+                        </h3>
+                    </div>
+                </div>
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                        <span class="address"> Jespore Bridge, Wallington, New York.</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+    </ion-list>
+</ion-footer>

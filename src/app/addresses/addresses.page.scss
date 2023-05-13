@@ -1,0 +1,110 @@
+.form {
+    width: calc(100% - 0px);
+    h3 {
+        margin: 0;
+        color: var(--text-light2);
+        font-weight: 400;
+        font-size: 0.95rem;
+        padding: 20px;
+    }
+    ion-item {
+        background: var(--white) !important;
+        padding: 20px;
+        margin-bottom: 8px;
+        border-radius: 0;
+        transition: all 0.5s;
+        ion-label {
+            width: 100% !important;
+            position: relative;
+            top: 0;
+            left: 0;
+            max-width: 100% !important;
+            white-space: normal;
+            align-items: flex-start;
+            padding: 0;
+            .icon_box {
+                ion-icon {
+                    color: var(--secondary);
+                    font-size: 1.6rem;
+                    min-width: 40px;
+                }
+            }
+            .text_box {
+                h2 {
+                    margin: 0;
+                    color: var(--text-black);
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding-bottom: 8px;
+                }
+                p {
+                    margin: 0;
+                    color: var(--text-light);
+                    font-weight: 500;
+                    font-size: 0.96rem;
+                }
+            }
+        }
+        ion-radio {
+            position: absolute;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            --color: var(--transparent) !important;
+            --color-checked: var(--transparent) !important;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            margin: auto;
+            background: var(--secondary);
+            transition: all 0.3s;
+            border-radius: 0;
+        }
+        &.item-radio-checked {
+            border-color: var(--primary) !important;
+            &::before {
+                width: 100%;
+                height: 100%;
+            }
+            ion-label {
+                align-items: flex-start;
+                .icon_box {
+                    ion-icon {
+                        color: var(--white);
+                    }
+                }
+                .text_box {
+                    width: 100%;
+                    p {
+                        color: var(--white);
+                        font-weight: 400;
+                    }
+                    h2 {
+                        color: var(--white);
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ion-footer {
+    --animate-duration: 0.4s !important;
+    .button.btn {
+        --background: var(--white);
+        color: var(--primary);
+        height: 58px;
+        font-weight: 500;
+        letter-spacing: 0 !important;
+        font-size: 1.15rem;
+    }
+}

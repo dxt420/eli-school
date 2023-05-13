@@ -1,0 +1,230 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            .title_inner {
+                display: flex !important;
+                align-items: center;
+                width: 100%;
+                line-height: 60px;
+                min-height: 60px;
+                h3 {
+                    margin: 0;
+                    position: relative;
+                    overflow: hidden;
+                    min-width: 40px;
+                    height: 34px;
+                    ion-icon {
+                        margin: auto;
+                        font-size: 1.55rem !important;
+                        color: var(--primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.banner {
+    padding: 18px 18px 30px 18px;
+    background: var(--white);
+    .doctor_details {
+        width: 100%;
+        .img_box {
+            width: 100%;
+            max-width: 160px;
+            height: 160px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        h2 {
+            margin: 0;
+            color: var(--text-dark);
+            font-size: 1.53rem;
+            font-weight: 600;
+            line-height: 31px;
+            padding-bottom: 10px;
+        }
+        h3 {
+            margin: 0;
+            color: var(--text-light2);
+            font-size: 0.8rem;
+            font-weight: 400;
+            ion-icon {
+                min-width: 12px;
+                padding: 0 2px;
+                font-size: 0.8rem;
+                position: relative;
+                top: -1px;
+            }
+        }
+    }
+    .other_details {
+        width: 100%;
+        padding-top: 22px;
+        .text_box {
+            h3 {
+                margin: 0;
+                color: var(--text-light2);
+                font-size: 0.94rem;
+                font-weight: 400;
+                letter-spacing: 0;
+                padding-bottom: 3px;
+                ion-icon {
+                    font-size: 1.5rem;
+                    width: 15px;
+                    min-width: 15px;
+                    color: var(--text-light2);
+                }
+            }
+            h4 {
+                margin: 0;
+                color: var(--text-black);
+                font-size: 0.95rem;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.banner_details {
+    width: 100%;
+}
+
+.tab_content {
+    padding-top: 8px;
+    ion-list {
+        padding: 0;
+        background: var(--transparent) !important;
+        margin: 0;
+        padding: 0;
+        ion-card {
+            margin: 0;
+            width: 100%;
+            margin-bottom: 8px;
+            border-radius: 0;
+            padding: 18px;
+            box-shadow: none;
+            h2 {
+                margin: 0;
+                color: var(--text-light2);
+                font-size: 0.94rem;
+                font-weight: 400;
+                letter-spacing: 0;
+                padding-bottom: 15px;
+            }
+            h5 {
+                margin: 0;
+                color: var(--secondary);
+                font-size: 0.95rem;
+            }
+            .text_box {
+                padding-bottom: 15px;
+                h3 {
+                    margin: 0;
+                    color: var(--text-dark);
+                    font-size: 1rem;
+                    letter-spacing: 0;
+                    padding-bottom: 3px;
+                    ion-icon {
+                        font-size: 1.5rem;
+                        width: 15px;
+                        min-width: 15px;
+                        color: var(--text-light2);
+                    }
+                }
+                h4 {
+                    margin: 0;
+                    color: var(--text-light);
+                    font-size: 0.92rem;
+                }
+            }
+            &.services {
+                .text_box {
+                    padding-bottom: 7px;
+                    h3 {
+                        font-size: 0.95rem;
+                    }
+                }
+                h5 {
+                    padding-top: 8px;
+                }
+            }
+            &.address_box {
+                padding: 0;
+                .address {
+                    padding: 17px 17px 13px 17px;
+                    align-items: flex-end;
+                    h2 {
+                        padding-bottom: 8px;
+                    }
+                    h3 {
+                        color: var(--text-light);
+                        font-size: 0.9rem;
+                        font-weight: 400;
+                        display: block;
+                        padding-top: 4px;
+                        margin: 0;
+                    }
+                    h5 {
+                        font-size: 1.4rem;
+                    }
+                }
+                .map_box {
+                    position: relative;
+                    width: 100%;
+                    overflow: hidden;
+                    max-height: 250px;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: -4px;
+                        left: 0;
+                        width: 100%;
+                        height: 56px;
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 7%, rgba(252, 196, 27, 0) 78%);
+                    }
+                    img {
+                        display: block;
+                    }
+                    ion-icon {
+                        position: absolute;
+                        min-height: 48px;
+                        background: url("../../assets/images/ic_hospital_pin_active.png");
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: 22px;
+                        z-index: 99;
+                        font-size: 2.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ion-footer {
+    --animate-duration: 0.4s !important;
+}
+
+.empty-view {
+    width: fit-content;
+    margin: auto;
+    height: fit-content;
+    position: relative;
+    padding: 0 20px;
+    padding-top: 33px;
+    img {
+        width: 100px;
+        margin: auto;
+    }
+    span {
+        display: block;
+        text-align: center;
+    }
+    button {
+        margin-top: 50px;
+        span {
+            display: unset !important;
+        }
+    }
+}

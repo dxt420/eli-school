@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'support' | translate}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="form">
+        <h1>
+            <span class="animate__animated animate__fadeInUp">{{'how_may_we' | translate}}</span>
+            <br>
+            <span class="animate__animated animate__fadeInUp"> {{'help_you' | translate}}</span>
+            <br>
+        </h1>
+
+        <h2 class="animate__animated animate__fadeInUp">{{'let_us_know_queries_feedback' | translate}}</h2>
+        <ion-list lines="none">
+            <!--
+			<ion-item lines="none">
+				<ion-label position="fixed">{{'full_name' | translate}}</ion-label>
+				<ion-input class="ion-text-end" type="name" value="Sam Smith"></ion-input>
+			</ion-item>
+-->
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-email ion-text-start"></ion-icon>
+                    <!--                    <ion-label position="fixed">{{'email_address' | translate}}</ion-label>-->
+                    <ion-input placeholder="{{'email_address' | translate}}" type="email" value="samsmith@mail.com"></ion-input>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp" lines="none">
+                <div class="item_inner d-flex">
+                    <ion-icon class="zmdi zmdi-edit ion-text-start"></ion-icon>
+                    <ion-textarea type="text" maxlength="500" rows="5" placeholder="{{'enter_your_message' | translate}}"></ion-textarea>
+                </div>
+            </ion-item>
+        </ion-list>
+        <ion-button size="large" shape="block" class="btn animate__animated animate__fadeInUp">{{'submit' | translate}}</ion-button>
+    </div>
+
+
+    <div class="footer_banner">
+        <img src="assets/images/contact-us.png">
+    </div>
+</ion-content>

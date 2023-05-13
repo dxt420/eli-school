@@ -1,0 +1,146 @@
+ion-content {
+    --background: rgba(0, 0, 0, 0) !important;
+}
+
+ion-footer {
+    background: var(--white);
+    padding-top: 11px;
+    .form {
+        width: calc(100% - 30px);
+        padding-bottom: 7px;
+        ion-icon {
+            &.zmdi-close {
+                color: var(--text-light2);
+                display: block;
+                width: 100%;
+                font-size: 1.3rem;
+                position: relative;
+                top: 5px;
+            }
+        }
+        ion-list {
+            padding: 0;
+            h1 {
+                margin: 0;
+                color: var(--text-light2) !important;
+                font-weight: 400;
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+            ion-item {
+                padding: 0 !important;
+                padding-bottom: 7px !important;
+                background: none !important;
+                border-radius: 0;
+                border: 0 !important;
+                border-bottom: 1px solid #ccc !important;
+                --min-height: unset !important;
+                margin-bottom: 13px !important;
+                ion-label {
+                    font-size: 1.1rem !important;
+                    color: var(--text-light2) !important;
+                    max-width: 100% !important;
+                    font-weight: 400;
+                    letter-spacing: 0 !important;
+                    padding: 0 !important;
+                }
+                ion-input {
+                    margin-top: 0;
+                    margin-top: 0;
+                    --padding-top: 17px !important;
+                    --padding-bottom: 6px !important;
+                }
+            }
+            ion-row {
+                ion-col {
+                    ion-item {
+                        padding: 9px 8px !important;
+                        border-radius: 7px;
+                        transition: all 0.5s;
+                        border: none !important;
+                        background: var(--bg-color) !important;
+                        ion-label {
+                            width: 100% !important;
+                            position: relative;
+                            top: 0;
+                            left: 0;
+                            max-width: 100% !important;
+                            white-space: normal;
+                            padding: 0px 0 !important;
+                            .img_container {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                .img_box {
+                                    position: relative;
+                                    width: 25px;
+                                    height: 25px;
+                                    overflow: hidden;
+                                    margin-right: 11px;
+                                    ion-icon {
+                                        color: var(--secondary);
+                                        font-size: 1.5rem;
+                                        min-width: 25px;
+                                        padding: 0 3px;
+                                        position: relative;
+                                        top: 0px;
+                                    }
+                                }
+                                h2 {
+                                    margin: 0;
+                                    font-weight: 500;
+                                    font-size: 0.9rem;
+                                    color: #000;
+                                    position: relative;
+                                    top: 2px;
+                                }
+                            }
+                        }
+                        ion-radio {
+                            position: absolute;
+                            z-index: 999;
+                            width: 100%;
+                            height: 100%;
+                            margin: 0;
+                            --color: var(--transparent) !important;
+                            --color-checked: var(--transparent) !important;
+                        }
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            width: 0;
+                            height: 0;
+                            margin: auto;
+                            background: var(--secondary);
+                            transition: all 0.3s;
+                            border-radius: 7px;
+                        }
+                        &.item-radio-checked {
+                            border-color: var(--transparent) !important;
+                            &::before {
+                                width: 100%;
+                                height: 100%;
+                            }
+                            ion-label {
+                                .img_container {
+                                    .img_box {
+                                        ion-icon {
+                                            color: var(--white);
+                                        }
+                                    }
+                                    h2 {
+                                        color: var(--white);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

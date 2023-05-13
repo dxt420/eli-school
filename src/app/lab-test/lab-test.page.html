@@ -1,0 +1,52 @@
+<ion-header class="bg_transparent">
+
+ 
+
+    <div class="d-flex profile">
+        <div class="img_box center_img" >
+            <img *ngFor="let s of school" src="{{s.school_logo}}" class="crop_img">
+        </div>
+        <div class="text_box">
+            <h1 *ngFor="let s of school" class="d-flex animate__animated animate__fadeInUp">
+                <span ></span>{{s.school_name}}
+                <!-- <ion-icon class="zmdi zmdi-more-vert end ion-text-end"></ion-icon> -->
+                <ion-icon class="zmdi end ion-text-end" name="checkmark-circle-outline"></ion-icon>
+            </h1>
+            <!-- <h2 class="animate__animated animate__fadeInUp" (click)="lab_profile()">{{"view_profile" | translate}}</h2> -->
+        </div>
+    </div>
+
+    <div class="today-task">
+        <ion-row class="animate__animated animate__fadeInUp d-flex">
+            <ion-col size="6">
+                <div class="text">
+                    <!-- <h3>0 {{"tests" | translate}}</h3>
+                    <h4>{{"booked_today" | translate}}</h4> -->
+                    <h3>Labaratory  <br>Tests</h3>
+                    <!-- <h4>Booked Today</h4> -->
+                </div>
+
+              
+                
+            </ion-col>
+        </ion-row>
+
+        <img src="assets/images/vector_hospital.png" class="end animate__animated animate__fadeInUp">
+
+    </div>
+  
+</ion-header>
+
+<ion-content fullscreen>
+   
+
+    <ion-list lines="none">
+        <h2 class="animate__animated animate__fadeInUp">Nearby LABS</h2>
+        <ion-item class="animate__animated animate__fadeInUp">
+            <h3>There are currently no lab nearby</h3>
+           
+        </ion-item>
+      
+    </ion-list>
+
+</ion-content>

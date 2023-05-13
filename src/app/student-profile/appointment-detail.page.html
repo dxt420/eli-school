@@ -1,0 +1,174 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            <div class="title_inner d-flex">
+                <!-- <span>{{'appointment_detail' | translate}}</span> -->
+                <span>Student Detail</span>
+                <ion-icon class="zmdi zmdi-more-vert end ion-text-end"></ion-icon>
+            </div>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="doctor_info d-flex">
+
+        <div class="img_box center_img animate__animated animate__fadeInUp">
+            <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
+        </div>
+
+        <div class="text_box">
+            <h2 class="animate__animated animate__fadeInUp" >{{student.name}} </h2>
+            <!-- <h3 class="animate__animated animate__fadeInUp"> Cardiac Surgeon
+            </h3>
+            <h3 class="animate__animated animate__fadeInUp"> <span>{{'at' | translate}}</span> Nsambya Hospital
+            </h3> -->
+        </div>
+    </div>
+
+    <div class="form">
+        <ion-list lines="none">
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <h2 class="d-flex">
+                        <!-- {{'appointment_on' | translate}} -->
+                        Class
+                    </h2>
+                    <h3>{{student.student_class}}</h3>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <!-- <h2 class="d-flex">{{'location' | translate}}</h2> -->
+                    <h2 class="d-flex">Parent Details</h2>
+                    <h3> {{student.parent}}</h3>
+                    <h4 class="d-flex">
+                        {{student.parent_contact}}
+                        <!-- <ion-icon class="zmdi zmdi-navigation end ion-text-end"></ion-icon> -->
+                        <ion-icon class="zmdi end ion-text-end" name="person-circle-outline"></ion-icon>
+                    </h4>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <!-- <h2 class="d-flex"> {{'appointment_booked_for' | translate}}</h2> -->
+                    <h2 class="d-flex"> Past Disease Condition</h2>
+                    <h3>{{student.past_disease_condition}}</h3>
+                </div>
+            </ion-item>
+
+            <ion-item class="animate__animated animate__fadeInUp">
+                <div class="item_inner">
+                    <!-- <h2 class="d-flex"> {{'attachment' | translate}}</h2> -->
+                    <h2 class="d-flex">Insurance Policy</h2>
+                    <!-- <h3 class="d-flex">
+                        <span>report22122o.pdf</span>
+
+                        <strong class="end"><ion-icon class="zmdi zmdi-download ion-text-start"></ion-icon> {{'download' | translate}}</strong>
+                    </h3> -->
+                    <h3> {{student.insurance}}</h3>
+                </div>
+            </ion-item>
+        </ion-list>
+
+
+
+        <ion-list id="icloud" lines="none">
+            <h2>Consultations</h2>
+    
+            <ion-item *ngIf="!consultations.length" class="animate__animated animate__fadeInUp">
+                <ion-item class="animate__animated animate__fadeInUp">
+                    <h6>There are currently no consultations</h6>
+                </ion-item>
+            </ion-item>
+
+
+    
+<!--           
+            <ion-item *ngFor="let consultation of consultations" class="animate__animated animate__fadeInUp">
+                <ion-item class="animate__animated animate__fadeInUp">
+                    <h6>We in</h6>
+                </ion-item>
+            </ion-item> -->
+
+            <ion-item *ngFor="let consultation of consultations" class="animate__animated animate__fadeInUp">
+                <div class="item_inner d-flex">
+                    <div class="img_box center_img" (click)="appointment_detail(consultation)">
+                        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
+                    </div>
+                    <div class="text_box">
+                        <h2 class="d-flex">
+                          
+                            <span (click)="appointment_detail(consultation)">{{consultation.student.name}}</span>
+                            <ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+                        </h2>
+                        <h3 (click)="appointment_detail(consultation)"> consultation with Dr. {{consultation.doctor.name}}
+                        </h3>
+                        <h4 class="d-flex">
+                            Suggested Time | {{consultation.consultation_time}}
+    
+                            <!-- <span class="end">
+                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                                <ion-icon class="zmdi zmdi-comment-alt-text ion-text-end" (click)="chat()">
+                                </ion-icon>
+                            </span> -->
+                        </h4>
+                    </div>
+                </div>
+    
+    
+             
+    
+            </ion-item>
+    
+
+    
+            <h2>Prescriptions</h2>
+    
+    
+            <ion-item class="animate__animated animate__fadeInUp">
+                <ion-item class="animate__animated animate__fadeInUp">
+                    <h6>No prescriptions history</h6>
+                </ion-item>
+            </ion-item>
+    
+            <h2>Lab Tests</h2>
+    
+    
+            <ion-item class="animate__animated animate__fadeInUp">
+                <ion-item class="animate__animated animate__fadeInUp">
+                    <h6>No tests history</h6>
+                </ion-item>
+            </ion-item>
+    
+        
+        </ion-list>
+    </div>
+</ion-content>
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+    <ion-row>
+        <!-- <ion-col size="4">
+            <ion-button size="large" shape="full" fill="clear" class="btn">
+                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                {{'call' | translate}}
+            </ion-button>
+        </ion-col>
+        <ion-col size="4">
+            <ion-button size="large" shape="full" fill="clear" class="btn">
+                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+                {{'call' | translate}}
+            </ion-button>
+        </ion-col>
+        <ion-col size="4">
+            <ion-button size="large" shape="full" class="btn" (click)="chat()">
+                <ion-icon class="zmdi zmdi-comment-alt-text ion-text-start"></ion-icon>
+                 Book appointment
+            </ion-button>
+        </ion-col> -->
+    </ion-row>
+</ion-footer>

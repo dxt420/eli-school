@@ -1,0 +1,88 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{'select_payment_method' | translate}}</ion-title>
+    </ion-toolbar>
+
+    <div class="amount_to_pay">
+        <h3 class="animate__animated animate__fadeInUp">{{'amount_to_pay' | translate}}</h3>
+        <h2 class="animate__animated animate__fadeInUp">$ 20.00</h2>
+    </div>
+</ion-header>
+<ion-content class="bg_color">
+
+    <!--
+    <div class="form">
+        <ion-list lines="none">
+            <ion-radio-group value="{{paymentMethoIdSelected}}" (ionChange)="onPaymentMethodSelected($event)">
+                <ion-item *ngFor="let pm of paymentMethods" lines="none">
+                    <div class="item_inner d-flex">
+                        <ion-radio slot="start" value="{{pm.id}}"></ion-radio>
+                        <ion-label class="d-flex">{{pm.title}}</ion-label>
+                    </div>
+                </ion-item>
+            </ion-radio-group>
+        </ion-list>
+    </div>
+-->
+
+    <ion-list lines="none">
+        <h2>{{'payment_modes' | translate}}</h2>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="order_placed()">
+            <div class="item_inner">
+                <div class="payment_option d-flex">
+                    <div class="img_box center_img">
+                        <img src="assets/images/ic_wallet.png" class="crop_img">
+                    </div>
+                    <h3 class="d-flex">
+                        Wallet
+                        <span class="end">$ 258.58</span>
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item class="animate__animated animate__fadeInUp" (click)="order_placed()">
+            <div class="item_inner">
+                <div class="payment_option d-flex">
+                    <div class="img_box center_img">
+                        <img src="assets/images/payment_cod.png" class="crop_img">
+                    </div>
+                    <h3>Cash on Delivery</h3>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="order_placed()">
+            <div class="item_inner">
+                <div class="payment_option d-flex">
+                    <div class="img_box center_img">
+                        <img src="assets/images/payment_paypal.png" class="crop_img">
+                    </div>
+                    <h3>PayPal</h3>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="order_placed()">
+            <div class="item_inner">
+                <div class="payment_option d-flex">
+                    <div class="img_box center_img">
+                        <img src="assets/images/payment_payu.png" class="crop_img">
+                    </div>
+                    <h3>PayU Money</h3>
+                </div>
+            </div>
+        </ion-item>
+        <ion-item class="animate__animated animate__fadeInUp" (click)="order_placed()">
+            <div class="item_inner">
+                <div class="payment_option d-flex">
+                    <div class="img_box center_img">
+                        <img src="assets/images/payment_stripe.png" class="crop_img">
+                    </div>
+                    <h3>Stripe</h3>
+                </div>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,15 @@
+.container {
+    width: calc(100% - 45px);
+    margin: 0 auto;
+    padding-top: 20px;
+
+    p {
+        margin: 0;
+        margin-bottom: 20px;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 23px;
+        letter-spacing: .3px;
+        color: var(--text-black);
+    }
+}

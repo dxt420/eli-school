@@ -1,0 +1,52 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+		</ion-buttons>
+		<ion-title>{{'order_track' | translate}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-color" fullscreen>
+	<div class="map center_img">
+		<img src="assets/images/map.png" class="crop_img">
+	</div>
+    
+	<div class="delivery_man_location" style="left: 47%; top: 35%; transform: rotate(168deg);">
+		<img src="assets/images/ic_deliveryman.png">
+	</div>
+	<div class="location_icon animate__animated animate__zoomIn" style="left: 10%; top: 20%;">
+		<ion-icon class="zmdi zmdi-pin ion-text-center"></ion-icon>
+	</div>
+
+	<div class="location_icon animate__animated animate__zoomIn" style="left:70%; top: 40%;">
+		<ion-icon class="zmdi zmdi-navigation ion-text-center"></ion-icon>
+	</div>
+</ion-content>
+
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp">
+	<div class="delivery_man_info d-flex">
+		<div class="img_box center_img">
+			<img src="assets/images/img_profile.png" class="crop_img">
+		</div>
+		<div class="text_box"> 
+			<h2>George Anderson</h2>
+			<h3>{{'delivery_partner' | translate}}</h3>
+		</div>
+	</div>
+
+	<ion-row>
+		<ion-col size="6">
+			<ion-button size="large" shape="full" fill="clear" class="btn">
+				<ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
+				{{'call' | translate}}
+			</ion-button>
+		</ion-col>
+		<ion-col size="6">
+			<ion-button size="large" shape="full" class="btn" (click)="chat()">
+				<ion-icon class="zmdi zmdi-comment-alt-text ion-text-start"></ion-icon>
+				{{'chat' | translate}}
+			</ion-button>
+		</ion-col>
+	</ion-row>
+</ion-footer>
