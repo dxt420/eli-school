@@ -15,6 +15,8 @@ export class LabTestPage implements OnInit {
   school = [];
   students= [];
   currentPage = 1;
+
+  labs = [];
   
   constructor(private route: Router, 
               private djangoService: ApiDjangoService,
@@ -49,6 +51,25 @@ export class LabTestPage implements OnInit {
       }
     );
 
+
+    this.djangoService.getPharmacies(this.currentPage).subscribe(
+      (res) => {
+        loading.dismiss();
+        console.log(res);
+        // this.pharmacies = res;
+        // console.log('School Array : ',this.school[0]);
+        this.labs.push(...res.results);
+ 
+        // event?.target.complete();
+        // if (event) {
+        //   event.target.disabled = res.total_pages === this.currentPage;
+        // }
+      },
+      (err) => {
+        console.log(err);
+        loading.dismiss();
+      }
+    );
    
   }
 

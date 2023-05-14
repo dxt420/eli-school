@@ -83,13 +83,55 @@
 
 
 
+    <!-- <h2 class="animate__animated animate__fadeInUp">Pharmacies near the school</h2> -->
     <ion-list id="ion-list2" lines="none">
-        <h2 class="animate__animated animate__fadeInUp">Pharmacies near the school</h2>
-        <ion-item class="animate__animated animate__fadeInUp">
+    
+        <ion-item *ngIf="!pharmacies.length"class="animate__animated animate__fadeInUp">
             <h3>Nearby pharmacies will appear hear</h3>
            
         </ion-item>
+
+        <!-- <ion-item class="animate__animated animate__fadeInUp">
+            <ion-item class="animate__animated animate__fadeInUp">
+                <h6>There are currently no consultations</h6>
+            </ion-item>
+        </ion-item> -->
+        <ion-item  *ngFor="let pharmacy of pharmacies"  class="animate__animated animate__fadeInUp">
+            <div class="item_inner">
+                <div class="item_header">
+                    <ion-row>
+                        <ion-col size='6'>
+                            <h2>{{pharmacy.name}}</h2>
+                            <h3>General Pharmacy</h3>
+                        </ion-col>
+                        <ion-col size='6'>
+                            <div class="hospital_images">
+                              
+                                <!-- <div class="img_box center_img">
+                                    <img src="assets/images/h2.png" class="crop_img">
+                                </div>  -->
+                                
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </div>
+
+                <div class="item_footer">
+                    <h3 class="d-flex">
+                        <span class="address">
+                            <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
+                            <small>{{pharmacy.district}}, {{pharmacy.country}}.</small> 
+                        </span>
+                        
+                    </h3>
+                </div>
+            </div>
+        </ion-item>
+
       
     </ion-list>
+
+
+    
     
 </ion-content>

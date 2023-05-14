@@ -13,7 +13,7 @@ import { Storage } from '@ionic/storage';
   providedIn: 'root'
 })
 export class AuthGuardService implements CanLoad {
-  private baseUrl = 'https://www.elitelehealth.com/api/api-user-login/'
+  private baseUrl = 'http://127.0.0.1:8000/api/api-user-login/'
   private nextUrl = '';
   didLogin = false;
   authState = new BehaviorSubject(false);

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
 import { ApiDjangoService } from 'src/services/api-django.service';
@@ -17,6 +17,8 @@ export class HospitalsPage implements OnInit {
   school = [];
   students= [];
   currentPage = 1;
+
+  pharmacies= [];
   
   constructor(private route: Router, 
               private statusBar: StatusBar,
@@ -52,6 +54,27 @@ export class HospitalsPage implements OnInit {
       }
     );
 
+
+     
+    this.djangoService.getPharmacies(this.currentPage).subscribe(
+      (res) => {
+        loading.dismiss();
+        console.log(res);
+        // this.pharmacies = res;
+        // console.log('School Array : ',this.school[0]);
+        this.pharmacies.push(...res.results);
+ 
+        // event?.target.complete();
+        // if (event) {
+        //   event.target.disabled = res.total_pages === this.currentPage;
+        // }
+      },
+      (err) => {
+        console.log(err);
+        loading.dismiss();
+      }
+    );
+
    
   }
 
@@ -63,9 +86,26 @@ export class HospitalsPage implements OnInit {
     this.loadData();
   }
 
-  hospital_info() {
-    this.route.navigate(['./hospital-info']);
-  }
+  // hospital_info() {
+  //   this.route.navigate(['./hospital-info']);
+  // }
+
+  hospital_info(params: any) {
+    console.log(params);
+     
+    // this.route.navigate(['./student-profile'], params);
+    let navigationExtras: NavigationExtras = {
+      state: {
+            // student: JSON.stringify(params)
+            pharamcy: params
+          }
+        };
+        // this.route.navigate(['./doctor-profile'], navigationExtras);
+      this.route.navigate(['./hospital-info'], navigationExtras);
+    }
+
+
+
   map() {
     this.route.navigate(['./hospital-map-view']);
   }
