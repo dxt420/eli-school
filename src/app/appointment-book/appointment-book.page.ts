@@ -38,6 +38,10 @@ export class AppointmentBookPage implements OnInit {
 
    school = [];
 
+   chosenOne: any;
+
+
+   selecTedValue: any;
    
 
   constructor(private route: ActivatedRoute, 
@@ -60,6 +64,7 @@ export class AppointmentBookPage implements OnInit {
     this.docForm = this.fb.group({
       student: ['', Validators.required],
       suggestedTime: ['', Validators.required],
+      suggestedDate: ['', Validators.required]
     });
   }
 
@@ -80,9 +85,9 @@ export class AppointmentBookPage implements OnInit {
       
       const data = {
         'notes': 'School Consultation Request',
-        'consultation_time' : this.docForm.value['suggestedTime'],
+        'suggestedTime' : this.docForm.value['suggestedTime'],
+        'suggestedDate' : this.docForm.value['suggestedDate'],
         'student' : parseInt(this.docForm.value['student']) ,
-        
         'school' : this.school[0].id ,
         'status' : 'pending' ,
         'doctor' : this.doctor.id ,
@@ -139,6 +144,29 @@ export class AppointmentBookPage implements OnInit {
     //     'student': this.student,
     //     'suggestedTime': this.suggestedTime
     // })
+  }
+
+
+  selectCategory(param){
+    console.log('Select Category');
+    console.log(param);
+
+    this.djangoService.getStudentInfo(param).subscribe(
+      (res) => {
+        // loading.dismiss();
+        console.log(res);
+        
+        this.chosenOne = res;
+   
+      },
+      (err) => {
+        console.log(err);
+        // loading.dismiss();
+      }
+    );
+
+
+    //populate here
   }
 
   async loadData(event?: InfiniteScrollCustomEvent) {

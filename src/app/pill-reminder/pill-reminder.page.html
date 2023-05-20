@@ -3,12 +3,25 @@
         <ion-buttons slot="start">
             <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
         </ion-buttons>
-        <ion-title>{{'create_pill_remibder' | translate}}</ion-title>
+        <ion-title>Prescription Note Details</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen>
-
+    <ion-list lines="none">
+		<ion-item class="animate__animated animate__fadeInUp"  >
+            <div class="item_inner d-flex">
+                <div class="icon_box">
+                    <ion-icon name="medkit-outline"></ion-icon>
+                </div>
+                <div class="text_box">
+                    <h2>{{pharmacy.name}}</h2>
+                    <h3>Supervisor: {{pharmacy.supervisor_name}} </h3>
+                    <h4><ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>{{pharmacy.district}}, {{pharmacy.country}}.</h4>
+                </div>
+            </div>
+        </ion-item>
+    </ion-list>
 
     <ion-modal trigger="selectTime1">
         <ng-template>
@@ -38,62 +51,97 @@
         </ng-template>
     </ion-modal>
 
+    <form [formGroup]="pharmacyForm" >
     <div class="form">
         <ion-list lines="none">
+
+                
             <ion-card class="animate__animated animate__fadeInUp">
-                <h2>{{'pill_name' | translate}}</h2>
+                <h2>Select Student</h2>
                 <ion-item lines="none">
-                    <ion-input class="ion-text-start" placeholder="{{'enter_pill_name' | translate}}">
-                    </ion-input>
+                    <!-- <ion-input class="ion-text-start" type="text" placeholder="{{'problems_here' | translate}}">
+                    </ion-input> -->
+                    <ion-select [(ngModel)]="selecTedValue" (ionChange)="selectCategory(selecTedValue)" formControlName="student" aria-label="fruit" placeholder="Select Student">
+                        <ion-select-option *ngFor="let student of students" value="{{student.id}}">{{student.name}}</ion-select-option>
+                        <!-- <ion-select-option value="oranges">Oranges</ion-select-option>
+                        <ion-select-option value="bananas">Bananas</ion-select-option> -->
+                      </ion-select>
+                    
                 </ion-item>
             </ion-card>
 
             <ion-card class="animate__animated animate__fadeInUp">
-                <h2>{{'select_days' | translate}}</h2>
-                <ion-item lines="none" (click)="select_day()">
-                    <div class="item_inner d-flex">
-                        <ion-icon class="zmdi zmdi-calendar-alt ion-text-start"></ion-icon>
-                        <ion-label>
-                            <span>{{'select_days' | translate}}</span>
-                            <!-- <strong>Mon, Tue, Thu, Sat</strong> -->
-                        </ion-label>
+             
 
-                    </div>
-                </ion-item>
-            </ion-card>
+                <ion-list id="vis" *ngIf="chosenOne" lines="none">
+                
+                    <ion-item class="animate__animated animate__fadeInUp" >
+                        <div class="item_inner d-flex">
+                            <div class="img_box center_img">
+                                <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
+                            </div>
+            
+                            <div class="text_box">
+                                <div class="d-flex" style="align-items: flex-start;">
+                                    <div class="" style="width: 100%; padding-bottom: 10px;">
+                                        <h2 class="d-flex">{{chosenOne.name}}
+                                            <!-- <ion-icon class="zmdi zmdi-phone end ion-text-end"></ion-icon> -->
+                                        </h2>
+                                        <h3>{{chosenOne.school.school_name}}</h3>
+                                      
+                                    </div>
+                                </div>
+                                <h4 class="d-flex">
+                                    <span>{{chosenOne.student_class}} </span>
+                                    <span class="end">
+                                        <!-- <ion-icon class="zmdi medkit-outline ion-text-start"></ion-icon>  -->
+                                        <ion-icon name="medkit-outline"></ion-icon>
+                                        {{chosenOne.insurance}}
+                                    </span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-item>
+            
+                  
+                </ion-list>
+            </ion-card> 
 
+
+        
+        
+
+       
             <ion-card class="animate__animated animate__fadeInUp">
-                <h2>{{'select_time' | translate}}</h2>
+                <h2>Prescription Note</h2>
 
                 <div class="d-flex" style="align-items: flex-start">
                     <div class="item_box">
-                        <ion-item class="animate__animated animate__fadeInUp" lines="none" id="selectTime1">
+                        <ion-item class="animate__animated animate__fadeInUp" lines="none">
                             <div class="item_inner d-flex">
                                 <ion-icon class="zmdi zmdi-notifications ion-text-start"></ion-icon>
-                                <ion-input class="ion-text-start" placeholder="{{'select_pill_time' | translate}}" value="{{ selectTimeA }}" readonly>
+                                <ion-input id="viewer"  class="ion-text-start" placeholder="Upload Prescription Note" value="" readonly>
                                 </ion-input>
+
+                                <input formControlName="file" name="file" type="file" id="file-upload" style=" display: 'none' " (onChange)="setImage($event)" />
+
                             </div>
                         </ion-item>
 
-                        <ion-item class="animate__animated animate__fadeInUp" lines="none" id="selectTime2">
-                            <div class="item_inner d-flex">
-                                <ion-icon class="zmdi zmdi-notifications ion-text-start"></ion-icon>
-                                <ion-input class="ion-text-start" placeholder="{{'select_pill_time' | translate}}" value="{{ selectTimeB }}" readonly>
-                                </ion-input>
-                            </div>
-                        </ion-item>
+                     
                     </div>
-                    <div class="add_time_box end animate__animated animate__fadeInUp">
+                    <div (click)="openFileDialog()" class="add_time_box end animate__animated animate__fadeInUp">
                         <span>+</span>
                     </div>
                 </div>
             </ion-card>
         </ion-list>
     </div>
+    </form>
 </ion-content>
 
 <ion-footer class="ion-no-border animate__animated animate__fadeInUp">
-    <ion-button size="large" shape="full" class="btn">
-        {{'set_reminder' | translate}}
+    <ion-button (click)="submitForm()" [disabled]="!pharmacyForm.valid" size="large" shape="full" class="btn">
+        Send Prescription Note
     </ion-button>
 </ion-footer>

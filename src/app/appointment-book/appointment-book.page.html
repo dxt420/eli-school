@@ -19,72 +19,163 @@
     </div>
     <!-- <form #ourLoginDir='ngForm' (submit)='handleSubmit($event, ourLoginDir, docForm)'> -->
        
- <form [formGroup]="docForm" (ngSubmit)="submitForm()">
+ <!-- <form [formGroup]="docForm" (ngSubmit)="submitForm()"> -->
+    <form [formGroup]="docForm" >
         
     <div class="form">
         <ion-list lines="none">
-            <!-- <ion-card class="animate__animated animate__fadeInUp">
-                <h2 class="d-flex">{{'select_date' | translate}} <span class="end">June 2020</span></h2>
+
+
+            
+            <ion-card class="animate__animated animate__fadeInUp">
+                <h2>Select Student</h2>
+                <ion-item lines="none">
+                    <!-- <ion-input class="ion-text-start" type="text" placeholder="{{'problems_here' | translate}}">
+                    </ion-input> -->
+                    <ion-select [(ngModel)]="selecTedValue" (ionChange)="selectCategory(selecTedValue)" formControlName="student" aria-label="fruit" placeholder="Select Student">
+                        <ion-select-option *ngFor="let student of students" value="{{student.id}}">{{student.name}}</ion-select-option>
+                        <!-- <ion-select-option value="oranges">Oranges</ion-select-option>
+                        <ion-select-option value="bananas">Bananas</ion-select-option> -->
+                      </ion-select>
+                    
+                </ion-item>
+            </ion-card>
+
+
+            <ion-card class="animate__animated animate__fadeInUp">
+                <!-- <h2>{{'attach_document' | translate}} ({{'eg_photo_report_etc' | translate}}.)</h2>
+                <ion-item lines="none" class="attach_document item-has-placeholder">
+                    <div class="item_inner d-flex">
+                        <ion-icon class="zmdi zmdi-attachment-alt ion-text-start "></ion-icon>
+                        <h3>{{'attach_now' | translate}}</h3>
+                        <div class="close_btn end">
+                            <ion-icon class="zmdi zmdi-close ion-text-center "></ion-icon>
+                        </div>
+                    </div>
+                </ion-item> -->
+
+                <ion-list id="vis" *ngIf="chosenOne" lines="none">
+                
+                    <ion-item class="animate__animated animate__fadeInUp" >
+                        <div class="item_inner d-flex">
+                            <div class="img_box center_img">
+                                <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
+                            </div>
+            
+                            <div class="text_box">
+                                <div class="d-flex" style="align-items: flex-start;">
+                                    <div class="" style="width: 100%; padding-bottom: 10px;">
+                                        <h2 class="d-flex">{{chosenOne.name}}
+                                            <!-- <ion-icon class="zmdi zmdi-phone end ion-text-end"></ion-icon> -->
+                                        </h2>
+                                        <h3>{{chosenOne.school.school_name}}</h3>
+                                      
+                                    </div>
+                                </div>
+                                <h4 class="d-flex">
+                                    <span>{{chosenOne.student_class}} </span>
+                                    <span class="end">
+                                        <!-- <ion-icon class="zmdi medkit-outline ion-text-start"></ion-icon>  -->
+                                        <ion-icon name="medkit-outline"></ion-icon>
+                                        {{chosenOne.insurance}}
+                                    </span>
+                                </h4>
+                            </div>
+                        </div>
+                    </ion-item>
+            
+                  
+                </ion-list>
+            </ion-card> 
+
+             <ion-card class="animate__animated animate__fadeInUp">
+                <h2 class="d-flex">Select Date <span class="end">May 2023</span></h2>
                 <div class="date_container ion-text-center">
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand1 ? 'active' : '' " (click)="faqExpandToggle1()">
-                        <h3>WED</h3>
-                        <h2>12</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand2 ? 'active' : '' " (click)="faqExpandToggle2()">
-                        <h3>THU</h3>
-                        <h2>13</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand3 ? 'active' : '' " (click)="faqExpandToggle3()">
-                        <h3>FRI</h3>
-                        <h2>14</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand4 ? 'active' : '' " (click)="faqExpandToggle4()">
-                        <h3>SAT</h3>
-                        <h2>15</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand5 ? 'active' : '' " (click)="faqExpandToggle5()">
-                        <h3>SUN</h3>
-                        <h2>16</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand6 ? 'active' : '' " (click)="faqExpandToggle6()">
-                        <h3>MON</h3>
-                        <h2>17</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand7 ? 'active' : '' " (click)="faqExpandToggle7()">
-                        <h3>TUE</h3>
-                        <h2>18</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand8 ? 'active' : '' " (click)="faqExpandToggle8()">
-                        <h3>WED</h3>
-                        <h2>19</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand9 ? 'active' : '' " (click)="faqExpandToggle9()">
-                        <h3>THU</h3>
-                        <h2>20</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand10 ? 'active' : '' " (click)="faqExpandToggle10()">
-                        <h3>FRI</h3>
-                        <h2>21</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand11 ? 'active' : '' " (click)="faqExpandToggle11()">
-                        <h3>SAT</h3>
-                        <h2>22</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand12 ? 'active' : '' " (click)="faqExpandToggle12()">
-                        <h3>SUN</h3>
-                        <h2>23</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand13 ? 'active' : '' " (click)="faqExpandToggle13()">
-                        <h3>MON</h3>
-                        <h2>24</h2>
-                    </div>
-                    <div class="date animate__animated animate__zoomIn" [ngClass]="faqExpand14 ? 'active' : '' " (click)="faqExpandToggle14()">
-                        <h3>TUE</h3>
-                        <h2>25</h2>
-                    </div>
+               
+
+                    <ion-radio-group formControlName='suggestedDate' value="AvailableTimes">
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label> 
+                                <h3>WED</h3>
+                                <h2>17</h2>
+                            </ion-label>
+                            <ion-radio slot="start" value="Wednesday 17"></ion-radio>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label> 
+                                <h3>THU</h3>
+                                <h2>18</h2>
+                            </ion-label>
+                            <ion-radio slot="start" value="Thursday 18"></ion-radio>
+                        </ion-item>
+
+
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label> 
+                                <h3>FRI</h3>
+                                <h2>19</h2>
+                            </ion-label>
+                            <ion-radio slot="start" value="Friday 19"></ion-radio>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label> 
+                                <h3>SAT</h3>
+                                <h2>20</h2>
+                            </ion-label>
+                            <ion-radio slot="start" value="Saturday 20"></ion-radio>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label> 
+                                <h3>SUN</h3>
+                                <h2>21</h2>
+                            </ion-label>
+                            <ion-radio slot="start" value="Sunday 21"></ion-radio>
+                        </ion-item>
+
+
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label> 
+                                <h3>MON</h3>
+                                <h2>22</h2>
+                            </ion-label>
+                            <ion-radio slot="start" value="Monday 22"></ion-radio>
+                        </ion-item>
+
+
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label> 
+                                <h3>TUE</h3>
+                                <h2>23</h2>
+                            </ion-label>
+                            <ion-radio slot="start" value="Tuesday 23"></ion-radio>
+                        </ion-item>
+
+
+
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label> 
+                                <h3>WED</h3>
+                                <h2>24</h2>
+                            </ion-label>
+                            <ion-radio slot="start" value="Wednesday 24"></ion-radio>
+                        </ion-item>
+
+                        <ion-item class="animate__animated animate__zoomIn">
+                            <ion-label> 
+                                <h3>THU</h3>
+                                <h2>25</h2>
+                            </ion-label>
+                            <ion-radio slot="start" value="Thursday 25"></ion-radio>
+                        </ion-item>
+                      
+                    </ion-radio-group>
 
                 </div>
-            </ion-card> -->
+            </ion-card> 
+
 
             <ion-card class="animate__animated animate__fadeInUp">
                 <h2>Suggested Time</h2>
@@ -140,20 +231,6 @@
                 </ion-radio-group>
             </ion-card>
 
-            <ion-card class="animate__animated animate__fadeInUp">
-                <h2>Select Student</h2>
-                <ion-item lines="none">
-                    <!-- <ion-input class="ion-text-start" type="text" placeholder="{{'problems_here' | translate}}">
-                    </ion-input> -->
-                    <ion-select formControlName="student" aria-label="fruit" placeholder="Select Student">
-                        <ion-select-option *ngFor="let student of students" value="{{student.id}}">{{student.name}}</ion-select-option>
-                        <!-- <ion-select-option value="oranges">Oranges</ion-select-option>
-                        <ion-select-option value="bananas">Bananas</ion-select-option> -->
-                      </ion-select>
-                    
-                </ion-item>
-            </ion-card>
-
 
             <!-- <ion-card class="animate__animated animate__fadeInUp">
                 <h2>{{'attach_document' | translate}} ({{'eg_photo_report_etc' | translate}}.)</h2>
@@ -167,20 +244,23 @@
                     </div>
                 </ion-item>
             </ion-card> -->
+
+
+          
         </ion-list>
       
       
    
         
     </div>
-    <ion-button id="bottom" type="submit" [disabled]="!docForm.valid" size="large" shape="full" class="btn">
+    <!-- <ion-button id="bottom" type="submit" [disabled]="!docForm.valid" size="large" shape="full" class="btn">
         {{'confirm_appointment' | translate}}
-    </ion-button>
+    </ion-button> -->
 </form>
 </ion-content>
 
-<!-- <ion-footer class="ion-no-border animate__animated animate__fadeInUp" >
-    <ion-button type="submit" [disabled]="!docForm.valid" size="large" shape="full" class="btn">
-        {{'confirm_appointment' | translate}}
+<ion-footer class="ion-no-border animate__animated animate__fadeInUp" >
+    <ion-button (click)="submitForm()" [disabled]="!docForm.valid" size="large" shape="full" class="btn">
+        Send Consultation Request
     </ion-button>
-</ion-footer> -->
+</ion-footer>

@@ -1,107 +1,317 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { InfiniteScrollCustomEvent, LoadingController } from '@ionic/angular';
+// import { FileUploadComponent } from 'src/components/app-file-upload-control';
+import { ApiDjangoService } from 'src/services/api-django.service';
+import { AuthenticationService } from 'src/services/authentication.service';
 
 @Component({
   selector: 'app-confirm-test-booking',
   templateUrl: './confirm-test-booking.page.html',
-  styleUrls: ['./confirm-test-booking.page.scss'],
+  styleUrls: ['./confirm-test-booking.page.scss']
 })
 export class ConfirmTestBookingPage implements OnInit {
-  faqExpand1: boolean;
-  faqExpand2: boolean;
-  faqExpand3: boolean;
-  faqExpand4: boolean;
-  faqExpand5: boolean;
-  faqExpand6: boolean;
-  faqExpand7: boolean;
-  faqExpand8: boolean;
-  faqExpand9: boolean;
-  faqExpand10: boolean;
-  faqExpand11: boolean;
-  faqExpand12: boolean;
-  faqExpand13: boolean;
-  faqExpand14: boolean;
-  constructor(private route: Router) { }
+
+
+  lab: any;
+  school= [];
+  currentPage = 1;
+   
+  students= [];
+
+  labForm: FormGroup;
+
+  chosenOne: any;
+
+  selecTedValue: any;
+
+  setImg: any;
+  // constructor(private route: Router,  private statusBar: StatusBar) { }
+
+  constructor(private route: ActivatedRoute, 
+              private router: Router,
+              private djangoService: ApiDjangoService,
+              private loadingCtrl: LoadingController,
+              private authService: AuthenticationService,
+              private fb: FormBuilder) {
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        // console.log('hi');
+        this.lab = this.router.getCurrentNavigation().extras.state.lab;
+        this.school = this.router.getCurrentNavigation().extras.state.school;
+        // console.log(this.school);
+        // console.log(this.lab);
+      }
+    });
+
+
+    this.labForm = this.fb.group({
+      student: ['', Validators.required],
+      // time: ['', Validators.required],
+      // date: ['', Validators.required],
+      file: ['', Validators.required]
+    });
+  }
+
 
   ngOnInit() {
+    this.loadData();
   }
 
-  reset() {
-    this.faqExpand1 = false;
-    this.faqExpand2 = false;
-    this.faqExpand3 = false;
-    this.faqExpand4 = false;
-    this.faqExpand5 = false;
-    this.faqExpand6 = false;
-    this.faqExpand7 = false;
-    this.faqExpand8 = false;
-    this.faqExpand9 = false;
-    this.faqExpand10 = false;
-    this.faqExpand11 = false;
-    this.faqExpand12 = false;
-    this.faqExpand13 = false;
-    this.faqExpand14 = false;
-  }
-  faqExpandToggle1() {
-    this.reset();
-    this.faqExpand1 = !this.faqExpand1;
+
+   openFileDialog = () => {
+    (document as any).getElementById("file-upload").click();
+ };
+ 
+  setImage  = (_event: any) => {
+   let f = _event.target.files![0];
+  
+ }
+
+  async submitForm() {
+    console.log(this.labForm.value);
+
+    console.log(this.setImg)
+
+    
+
+    const loading = await this.loadingCtrl.create({
+      message: 'Loading..',
+      spinner: 'bubbles',
+    });
+    // console.log(this.school[0] );
+    // console.log(this.labForm.value);
+    await loading.present();
+    // event.preventDefault();
+    // if (ourLoginDir.submitted){
+      // console.log(this.doctor.name );
+      
+
+      // const formData =  new FormData();
+
+      const att =  (document as any).getElementById("file-upload").files[0];
+      
+
+      console.log(att);
+
+      console.log(att.name);
+
+      // const reader = new FileReader();
+      // reader.onloadend = () => {
+      //   const formData = new FormData();
+      //   const blobFile = new Blob([reader.result], { type: att.type });
+      //   formData.append("attachment", blobFile, att.name);
+      //   formData.append('laboratory', this.lab.id);
+      //   formData.append("notes", 'Student Test Request');
+      //   // formData.append("consultation_time", this.labForm.value['suggestedTime']);
+      //   formData.append("student", this.labForm.value['student']);
+      //   // formData.append("attachment", att);
+      //   formData.append("school", this.school[0].id );
+      //   formData.append("status", 'pending');
+
+
+      //     // const data = {
+      // //   'laboratory' :  this.lab.id ,
+      // //   'notes': 'Student Test Request',
+      // //   'consultation_time' : this.labForm.value['suggestedTime'],
+      // //   'student' : parseInt(this.labForm.value['student']) ,
+      // //   'attachment' : att,
+      // //   'school' : this.school[0].id ,
+      // //   'status' : 'pending' 
+        
+      // // }
+
+      //   // POST formData call
+
+      //   this.djangoService.sendTestRequest(formData,this.authService.getUsername()).subscribe(
+      //     (res) => {
+      //       loading.dismiss();
+      //       console.log(res);
+            
+       
+      //     },
+      //     (err) => {
+      //       console.log(err);
+      //       loading.dismiss();
+      //     }
+      //   );
+
+
+      // };
+      // reader.readAsArrayBuffer(att);
+
+      // this.router.navigate(['./my-lab-tests']);
+
+     
+
+      
+
+
+      // student = models.ForeignKey(Student, on_delete=models.CASCADE)
+      // date_created = models.DateTimeField(auto_now_add=True)
+      // laboratory = models.ForeignKey(Laboratory, on_delete=models.CASCADE)
+      // notes = models.TextField()
+      // # fee = models.CharField(max_length=254)
+      // school = models.ForeignKey(School,on_delete=models.CASCADE)
+      // status = models.CharField(max_length=254)
+      // attachment = models.FileField(upload_to='test_attachment', blank=True)
+
+
+      // this.labForm.
+
+      //   const att =  (document as any).getElementById("file-upload").files[0];
+      
+
+      // console.log(att);
+
+
+      // const data = {
+      //   'laboratory' :  this.lab.id ,
+      //   'notes': 'Student Test Request',
+      //   'student' : parseInt(this.labForm.value['student']) ,
+      //   'attachment' : att,
+      //   'school' : this.school[0].id ,
+      //   'status' : 'pending' 
+        
+      // }
+
+
+      const formData = new FormData();
+        // const blobFile = new Blob([reader.result], { type: att.type });
+        formData.append("attachment", att, att.name);
+        formData.append('laboratory', this.lab.id+'');
+        formData.append("notes", 'Student Test Request');
+        // formData.append("consultation_time", this.labForm.value['suggestedTime']);
+        formData.append("student", this.labForm.value['student']);
+        // formData.append("attachment", att);
+        formData.append("school", this.school[0].id );
+        formData.append("status", 'pending');
+
+
+      // var options = {
+      //   'enctype': 'multipart/form-data;'
+        
+      // };
+      
+
+
+
+      // console.log(formData);
+
+      // console.log(formData.get('laboratory'));
+// 
+      // console.log(formData.get('attachment'));
+      
+
+      // sendConsultation
+      this.djangoService.sendTestRequest(formData,this.authService.getUsername()).subscribe(
+        (res) => {
+          loading.dismiss();
+          console.log(res);
+          
+     
+        },
+        (err) => {
+          console.log(err);
+          loading.dismiss();
+        }
+      );
+
+      // this.navCtrl.navigateRoot(['./my-lab-tests']);
+
+      this.router.navigate(['./appointment-booked']);
+
+      
+ 
+    
   }
 
-  faqExpandToggle2() {
-    this.reset();
-    this.faqExpand2 = !this.faqExpand2;
+
+  selectCategory(param){
+    // console.log('Select Category');
+    // console.log(param);
+
+    this.djangoService.getStudentInfo(param).subscribe(
+      (res) => {
+        // loading.dismiss();
+        console.log(res);
+        
+        this.chosenOne = res;
+   
+      },
+      (err) => {
+        console.log(err);
+        // loading.dismiss();
+      }
+    );
+
+
+    //populate here
   }
-  faqExpandToggle3() {
-    this.reset();
-    this.faqExpand3 = !this.faqExpand3;
+
+
+  async loadData(event?: InfiniteScrollCustomEvent) {
+    const loading = await this.loadingCtrl.create({
+      message: 'Loading..',
+      spinner: 'bubbles',
+    });
+    await loading.present();
+
+    console.log(this.authService.getUsername());
+    
+    
+ 
+    this.djangoService.getSchoolInfo(this.currentPage,this.authService.getUsername()).subscribe(
+      (res) => {
+        loading.dismiss();
+        console.log(res);
+        this.school[0] = res;
+        console.log('School Array : ',this.school[0]);
+        // this.school.push(...res.results);
+ 
+        // event?.target.complete();
+        // if (event) {
+        //   event.target.disabled = res.total_pages === this.currentPage;
+        // }
+      },
+      (err) => {
+        console.log(err);
+        loading.dismiss();
+      }
+    );
+
+    this.djangoService.getStudents(this.currentPage,this.authService.getUsername()).subscribe(
+      (res) => {
+        loading.dismiss();
+        console.log(res);
+        // this.students = res;
+        this.students.push(...res.results);
+ 
+        event?.target.complete();
+        if (event) {
+          event.target.disabled = res.total_pages === this.currentPage;
+        }
+      },
+      (err) => {
+        console.log(err);
+        loading.dismiss();
+      }
+    );
   }
-  faqExpandToggle4() {
-    this.reset();
-    this.faqExpand4 = !this.faqExpand4;
+ 
+  loadMore(event: InfiniteScrollCustomEvent) {
+    this.currentPage++;
+    this.loadData(event);
   }
-  faqExpandToggle5() {
-    this.reset();
-    this.faqExpand5 = !this.faqExpand5;
-  }
-  faqExpandToggle6() {
-    this.reset();
-    this.faqExpand6 = !this.faqExpand6;
-  }
-  faqExpandToggle7() {
-    this.reset();
-    this.faqExpand7 = !this.faqExpand7;
-  }
-  faqExpandToggle8() {
-    this.reset();
-    this.faqExpand8 = !this.faqExpand8;
-  }
-  faqExpandToggle9() {
-    this.reset();
-    this.faqExpand9 = !this.faqExpand9;
-  }
-  faqExpandToggle10() {
-    this.reset();
-    this.faqExpand10 = !this.faqExpand10;
-  }
-  faqExpandToggle11() {
-    this.reset();
-    this.faqExpand11 = !this.faqExpand11;
-  }
-  faqExpandToggle12() {
-    this.reset();
-    this.faqExpand12 = !this.faqExpand12;
-  }
-  faqExpandToggle13() {
-    this.reset();
-    this.faqExpand13 = !this.faqExpand13;
-  }
-  faqExpandToggle14() {
-    this.reset();
-    this.faqExpand14 = !this.faqExpand14;
-  }
+
+
 
   my_lab_tests() {
-      this.route.navigate(['./my-lab-tests']);
+    const formData = new FormData();
+    formData.append('file', this.labForm.get('file').value);
+    console.log(formData);
+      this.router.navigate(['./my-lab-tests']);
     } 
   
 }

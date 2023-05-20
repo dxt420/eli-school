@@ -21,8 +21,8 @@ export interface ApiResult {
   providedIn: 'root'
 })
 export class ApiDjangoService {
-  // private baseUrl = 'http://127.0.0.1:8000/api/api-user-login/'
-  private baseUrl = 'http://127.0.0.1:8000/api/api-user-login/'
+  // private baseUrl = 'https://www.elitelehealth.com/api/api-user-login/'
+  private baseUrl = 'https://www.elitelehealth.com/api/api-user-login/'
   private nextUrl = '/tabs';
   didLogin = false;
   authState = new BehaviorSubject(false);
@@ -62,9 +62,21 @@ export class ApiDjangoService {
 
   getSchoolInfo(page = 1,email:string): Observable<ApiResult> {
     return this.http.get<ApiResult>(
-      // `http://127.0.0.1:8000/api/school/` + email
+      // `https://www.elitelehealth.com/api/school/` + email
 
-      `http://127.0.0.1:8000/api/school/` + email
+      `https://www.elitelehealth.com/api/school/` + email
+
+    
+      
+    );
+  }
+
+
+  getStudentInfo(pk: any): Observable<ApiResult> {
+    return this.http.get<ApiResult>(
+      // `https://www.elitelehealth.com/api/school/` + email
+
+      `https://www.elitelehealth.com/api/studentdetail/` + pk
 
     
       
@@ -73,8 +85,8 @@ export class ApiDjangoService {
 
   getStudents(page = 1,school:string): Observable<ApiResult> {
     return this.http.get<ApiResult>(
-      // `http://127.0.0.1:8000/api/student/` 
-      `http://127.0.0.1:8000/api/student/` + school
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/student/` + school
       
     );
   }
@@ -83,26 +95,95 @@ export class ApiDjangoService {
 
   sendConsultation(data: any,school:string): Observable<ApiResult> {
     return this.http.post<ApiResult>(
-      // `http://127.0.0.1:8000/api/student/` 
-      `http://127.0.0.1:8000/api/newconsultation/`+ school + `/`,data=data
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/newconsultation/`+ school + `/`,data=data
       
     );
   }
 
+
+  sendTestRequest(data: any,school:string): Observable<ApiResult> {
+    // this.http.setDataSerializer('multipart')
+    return this.http.post<ApiResult>(
+      // `https://www.elitelehealth.com/api/student/` 
+      // `https://www.elitelehealth.com/api/newtestrequest/`+ school + `/`,data,{
+      //   headers: {
+      //     'content-type': 'multipart/form-data'
+      //   }
+      // }
+
+      `https://www.elitelehealth.com/api/newtestrequest/`+ school + `/`,data
+      
+      
+    );
+  }
+
+
+  sendPrescriptionNote(data: any,school:string): Observable<ApiResult> {
+
+    return this.http.post<ApiResult>(
+     
+
+      `https://www.elitelehealth.com/api/newprescription/`+ school + `/`,data
+      
+      
+    );
+  }
+
+  // sendPrescriptionNote
 
   getSchoolConsultations(page = 1,school:string): Observable<ApiResult> {
     return this.http.get<ApiResult>(
-      // `http://127.0.0.1:8000/api/student/` 
-      `http://127.0.0.1:8000/api/consultation/`+ school
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/consultation/`+ school
       
     );
   }
+
+
+  getSchoolTests(page = 1,school:string): Observable<ApiResult> {
+    return this.http.get<ApiResult>(
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/test/`+ school
+      
+    );
+  }
+
+
+  getSchoolPrescriptions(page = 1,school:string): Observable<ApiResult> {
+    return this.http.get<ApiResult>(
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/prescription/`+ school
+      
+    );
+  }
+
+
+  
 
 
   getStudentConsultations(page = 1,student:string): Observable<ApiResult> {
     return this.http.get<ApiResult>(
-      // `http://127.0.0.1:8000/api/student/` 
-      `http://127.0.0.1:8000/api/studentconsultation/`+ student
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/studentconsultation/`+ student
+      
+    );
+  }
+
+
+  getStudentTests(page = 1,student:string): Observable<ApiResult> {
+    return this.http.get<ApiResult>(
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/studenttest/`+ student
+      
+    );
+  }
+
+
+  getStudentPrescriptions(page = 1,student:string): Observable<ApiResult> {
+    return this.http.get<ApiResult>(
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/studentprescription/`+ student
       
     );
   }
@@ -112,9 +193,9 @@ export class ApiDjangoService {
 
   getDjangoFullObjectById(id:any,url:any): Observable<ApiResult> {
     return this.http.get<ApiResult>(
-      // `http://127.0.0.1:8000/api/school/` + email
+      // `https://www.elitelehealth.com/api/school/` + email
 
-      `http://127.0.0.1:8000/api/`+ url + `/` + id
+      `https://www.elitelehealth.com/api/`+ url + `/` + id
 
     
       
@@ -123,16 +204,16 @@ export class ApiDjangoService {
 
   getLabs(page = 1): Observable<ApiResult> {
     return this.http.get<ApiResult>(
-      // `http://127.0.0.1:8000/api/student/` 
-      `http://127.0.0.1:8000/api/lab/`
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/lab/`
       
     );
   }
 
   getPharmacies(page = 1): Observable<ApiResult> {
     return this.http.get<ApiResult>(
-      // `http://127.0.0.1:8000/api/student/` 
-      `http://127.0.0.1:8000/api/pharmacy/`
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/pharmacy/`
       
     );
   }
@@ -140,8 +221,8 @@ export class ApiDjangoService {
 
   getDoctors(page = 1): Observable<ApiResult> {
     return this.http.get<ApiResult>(
-      // `http://127.0.0.1:8000/api/student/` 
-      `http://127.0.0.1:8000/api/doctors/`
+      // `https://www.elitelehealth.com/api/student/` 
+      `https://www.elitelehealth.com/api/doctors/`
       
     );
   }

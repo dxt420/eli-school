@@ -97,13 +97,15 @@ export class HospitalsPage implements OnInit {
     let navigationExtras: NavigationExtras = {
       state: {
             // student: JSON.stringify(params)
-            pharamcy: params
+            pharmacy: params
           }
         };
-        // this.route.navigate(['./doctor-profile'], navigationExtras);
-      this.route.navigate(['./hospital-info'], navigationExtras);
+        this.route.navigate(['./hospital-info'], navigationExtras);
+      // this.route.navigate(['./pill-reminder'], navigationExtras);
     }
 
+
+   
 
 
   map() {

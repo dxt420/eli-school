@@ -362,3 +362,47 @@ ion-header {
 ion-button {
     --animate-duration: 0.4s !important;
 }
+
+ion-footer {
+    .payment_details {
+        margin-bottom: 4px;
+        ion-item {
+            --inner-padding-end: 0px;
+            --inner-min-height: unset !important;
+            --min-height: unset !important;
+            --padding-start: 0;
+            --background: var(--transparent) !important;
+            background: var(--white);
+            padding: 8px 15px;
+            .item_inner {
+                width: 100%;
+                h3 {
+                    margin: 0;
+                    color: var(--text-light);
+                    font-size: 0.95rem;
+                    letter-spacing: 0;
+                    font-weight: 500;
+                    span {
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                        color: var(--text-dark);
+                    }
+                }
+            }
+            &.amount_payable {
+                .item_inner {
+                    h3 {
+                        color: var(--text-black);
+                        font-size: 1.1rem;
+                        letter-spacing: 0;
+                        font-weight: 600;
+                        span {
+                            color: var(--text-black);
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

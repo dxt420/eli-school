@@ -10,7 +10,8 @@ import {
 import { Router } from '@angular/router';
 
 // import 'rxjs/add/operator/do';
-import {tap} from 'rxjs/internal/operators';
+// import {tap} from 'rxjs/internal/operators';
+import {tap} from 'rxjs/operators';
 // import { Observable } from 'rxjs/Observable';
 import { Observable } from "rxjs";
 import { CookieService } from 'ngx-cookie-service'; //

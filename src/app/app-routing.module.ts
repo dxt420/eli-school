@@ -300,6 +300,12 @@ const routes: Routes = [
     loadChildren: () => import('./my-lab-tests/my-lab-tests.module').then( m => m.MyLabTestsPageModule)
   },
   {
+    path: 'my-pharmacy-orders',
+    loadChildren: () => import('./my-pharmacy-orders/my-lab-tests.module').then( m => m.MyLabTestsPageModule)
+  },
+
+ 
+  {
       path: '',
       redirectTo: 'sign-in', 
       pathMatch: 'full'

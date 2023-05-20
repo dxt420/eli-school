@@ -52,7 +52,7 @@ export class LabTestPage implements OnInit {
     );
 
 
-    this.djangoService.getPharmacies(this.currentPage).subscribe(
+    this.djangoService.getLabs(this.currentPage).subscribe(
       (res) => {
         loading.dismiss();
         console.log(res);
@@ -70,6 +70,8 @@ export class LabTestPage implements OnInit {
         loading.dismiss();
       }
     );
+
+    
    
   }
 

@@ -225,6 +225,108 @@ ion-list {
 
 
 
+#ace {
+    background: var(--transparent) !important;
+    margin: 0;
+    padding: 0;
+    padding-top: 7px;
+    ion-item {
+        padding: 15px;
+        background: var(--white);
+        --inner-padding-end: 0px;
+        --inner-min-height: unset !important;
+        --padding-start: 0;
+        --highligh-color-focused: var(--transparent) !important;
+        margin-bottom: 7px;
+        .item_inner {
+            width: 100%;
+            .icon_box {
+                min-width: 53px;
+                height: 53px;
+                position: relative;
+                border-radius: 53%;
+                margin-right: 20px;
+                background: var(--bg-color);
+                ion-icon {
+                    color: var(--secondary);
+                    width: 53px;
+                    height: 53px;
+                    line-height: 53px;
+                    font-size: 1.35rem;
+                }
+            }
+            .text_box {
+                width: 100%;
+                overflow: hidden;
+                h2 {
+                    color: var(--text-dark);
+                    margin: 0;
+                    font-size: 0.95rem;
+                    font-weight: 500;
+                    padding-bottom: 5px;
+                    ion-icon {
+                        color: var(--red_color);
+                        font-size: 1.3rem;
+                        min-width: 25px;
+                    }
+                }
+                h3 {
+                    margin: 0;
+                    color: var(--text-light2);
+                    font-weight: 400;
+                    font-size: 0.7rem;
+                    padding-bottom: 3px;
+                }
+                h4 {
+                    margin: 0;
+                    color: var(--text-light);
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                }
+            }
+        }
+        &.upload_prescription {
+            --min-height: unset !important;
+            padding: 16px 20px;
+            .item_inner {
+                .item_img {
+                    min-width: 18px;
+                }
+                h2 {
+                    margin: 0;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    .icon_box {
+                        min-width: 57px;
+                        ion-icon {
+                            color: var(--primary);
+                            font-size: 1.35rem;
+                            min-width: 28px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+ion-fab {
+    right: 20px;
+    bottom: 20px;
+    --animate-duration: 0.35s !important;
+    ion-fab-button {
+        --background: var(--primary);
+        width: 55px;
+        height: 55px;
+        --box-shadow: none;
+        ion-icon {
+            font-size: 1.5rem;
+            font-size: 2rem;
+        }
+    }
+}
+
+
 #ion-list2 {
     padding: 12px 15px 0 15px;
     background: none;

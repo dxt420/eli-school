@@ -6,7 +6,7 @@
         <ion-title>
             <div class="title_inner d-flex">
                 <h3 class="end">
-                    <ion-icon class="zmdi zmdi-phone ion-text-end"></ion-icon>
+                    <!-- <ion-icon class="zmdi zmdi-phone ion-text-end"></ion-icon> -->
                 </h3>
             </div>
         </ion-title>
@@ -20,13 +20,17 @@
                 <img src="assets/images/lab_profile/lab_profile.png" class="crop_img">
             </div>
 
-            <div class="text_box" style="width: 100%;">
-                <h2 class="animate__animated animate__fadeInUp">City Cure <br> Labs</h2>
+            <div  *ngFor="let s of school" class="text_box" style="width: 100%;">
+                 <h2 class="animate__animated animate__fadeInUp">{{lab.name}}</h2>
+            <h3 class="animate__animated animate__fadeInUp">Medical Laboratory</h3>
+
+            <h3 class="animate__animated animate__fadeInUp">Supervisor: {{lab.supervisor_name}}</h3>
+                <!-- <h2 class="animate__animated animate__fadeInUp">{{lab.name}} <br> </h2>
                 <h3 class="animate__animated animate__fadeInUp d-flex">
                     <ion-icon class="zmdi zmdi-pin"></ion-icon>
-                    Williamson Bridge
-                </h3>
-                <div class="other_details">
+                    {{lab.district}}, <br> {{lab.country}}
+                </h3> -->
+                <!-- <div class="other_details">
                     <div class="text_box availability animate__animated animate__fadeInUp">
                         <h3 class="d-flex">{{'availability' | translate}}
                             <ion-icon class="zmdi zmdi-chevron-right ion-text-end end"></ion-icon>
@@ -35,7 +39,7 @@
                             12:00 to 13:00
                         </h4>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -43,7 +47,7 @@
     <div class="tab_content">
         <!--About section start> -->
         <ion-list lines="none">
-            <ion-card class=" animate__animated animate__fadeInUp">
+            <!-- <ion-card class=" animate__animated animate__fadeInUp">
                 <div class="address">
                     <h2>{{'about' | translate}}</h2>
                     <div class="text_box animate__animated animate__fadeInUp">
@@ -53,10 +57,10 @@
                     </div>
                     <h5>{{'read_more' | translate}}</h5>
                 </div>
-            </ion-card>
+            </ion-card> -->
 
-            <ion-card class="services">
-                <h2>{{'facilities' | translate}}</h2>
+            <!-- <ion-card class="services">
+                <h2>Facilities</h2>
 
                 <div class="text_box animate__animated animate__fadeInUp">
                     <h3>Sample Pickup</h3>
@@ -74,15 +78,15 @@
                     <h3>Reminder Call</h3>
                 </div>
                 <h5>+ 5 {{'more' | translate}}</h5>
-            </ion-card>
+            </ion-card> -->
 
             <ion-card class="address_box animate__animated animate__fadeInUp">
                 <div class="address d-flex">
                     <div class="">
-                        <h2 class="animate__animated animate__fadeInUp">{{'address' | translate}}</h2>
+                        <h2 class="animate__animated animate__fadeInUp">Address</h2>
                         <h3 class="d-flex animate__animated animate__fadeInUp">
                             <ion-icon class="zmdi zmdi-pin"></ion-icon>
-                            Walter street, Wallington, New York.
+                            {{lab.district}},  {{lab.country}}
                         </h3>
                     </div>
                     <h5 class="end">
@@ -90,10 +94,10 @@
                     </h5>
                 </div>
 
-                <div class="map_box">
+                <!-- <div class="map_box">
                     <img src="assets/images/map.png">
                     <ion-icon style="top:34%; left: 46%;" class="animate__animated animate__zoomIn"></ion-icon>
-                </div>
+                </div> -->
             </ion-card>
         </ion-list>
         <!--About section end> -->
@@ -101,8 +105,8 @@
 </ion-content>
 
 <ion-footer class="ion-no-border animate__animated animate__fadeInUp">
-    <ion-button size="large" shape="full" class="btn" (click)="select_test()">
-        <ion-icon slot="start" class="zmdi zmdi-search"></ion-icon>
-        {{'search_for_test' | translate}}
+    <ion-button size="large" shape="full" class="btn" (click)="request_test(lab)">
+        <!-- <ion-icon slot="start" class="zmdi zmdi-search"></ion-icon> -->
+        Request for Lab Test
     </ion-button>
 </ion-footer>

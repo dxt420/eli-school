@@ -37,44 +37,54 @@
   
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content  fullscreen>
    
 
-    <ion-list lines="none">
-        <!-- <h2 class="animate__animated animate__fadeInUp">Nearby LABS</h2> -->
+    <ion-list *ngIf="!labs.length"  id="original" lines="none">
+        
         <ion-item class="animate__animated animate__fadeInUp">
-            <h3>There are currently no lab nearby</h3>
+            <h3>There are currently no labs nearby</h3>
            
         </ion-item>
+       
+    </ion-list>
 
-        <ion-item  *ngFor="let lab of labs"  class="animate__animated animate__fadeInUp">
-            <div class="item_inner">
-                <div class="item_header">
-                    <ion-row>
-                        <ion-col size='6'>
-                            <h2>{{lab.name}}</h2>
-                            <h3>Laboratory</h3>
-                        </ion-col>
-                        <ion-col size='6'>
-                            <div class="hospital_images">
-                              
-                                <!-- <div class="img_box center_img">
-                                    <img src="assets/images/h2.png" class="crop_img">
-                                </div>  -->
-                                
-                            </div>
-                        </ion-col>
-                    </ion-row>
-                </div>
 
-                <div class="item_footer">
-                    <h3 class="d-flex">
-                        <span class="address">
-                            <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
-                            <small>{{lab.district}}, {{lab.country}}.</small> 
-                        </span>
-                        
+    <ion-list lines="none">
+     
+
+        <ion-item  *ngFor="let lab of labs"  class="animate__animated animate__fadeInUp" (click)="list_of_lab()">
+            <div class="item_inner d-flex">
+                
+
+
+                <div class="text_box">
+                    <h2>{{lab.name}}</h2>
+                    <h3>  Laboratory <span>in</span> {{lab.district}}, {{lab.country}}
                     </h3>
+                    <!-- <ion-row>
+                        <ion-col size="4">
+                            <h2>
+                                {{'exp' | translate}}&nbsp;<strong>22
+                                    {{'years' | translate}}</strong>
+                            </h2>
+                        </ion-col>
+                        <ion-col size="3">
+                            <h2>{{'fees' | translate}}&nbsp;<strong>$30</strong>
+                            </h2>
+                        </ion-col>
+
+                        <ion-col size="5" class="d-flex">
+                            <h2 class="end">
+                                <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                <ion-icon class="zmdi zmdi-star active"></ion-icon>
+                                <ion-icon class="zmdi zmdi-star"></ion-icon>
+                                &nbsp; (152)
+                            </h2>
+                        </ion-col>
+                    </ion-row> -->
                 </div>
             </div>
         </ion-item>

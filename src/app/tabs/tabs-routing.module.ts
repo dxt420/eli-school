@@ -30,6 +30,7 @@ const routes: Routes = [
       {
         path: 'hospitals',
         children: [
+          // pill-reminders
           {
             path: '',
             loadChildren: () =>
@@ -43,7 +44,9 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../lab-test/lab-test.module').then(m => m.LabTestPageModule)
+            import('../list-of-lab/list-of-lab.module').then( m => m.ListOfLabPageModule)
+
+              
           }
         ]
       },

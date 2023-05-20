@@ -36,7 +36,7 @@
   
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content  fullscreen>
     <!-- <ion-content class="bg_color" fullscreen> -->
   
 
@@ -96,37 +96,22 @@
                 <h6>There are currently no consultations</h6>
             </ion-item>
         </ion-item> -->
-        <ion-item  *ngFor="let pharmacy of pharmacies"  class="animate__animated animate__fadeInUp">
-            <div class="item_inner">
-                <div class="item_header">
-                    <ion-row>
-                        <ion-col size='6'>
-                            <h2>{{pharmacy.name}}</h2>
-                            <h3>General Pharmacy</h3>
-                        </ion-col>
-                        <ion-col size='6'>
-                            <div class="hospital_images">
-                              
-                                <!-- <div class="img_box center_img">
-                                    <img src="assets/images/h2.png" class="crop_img">
-                                </div>  -->
-                                
-                            </div>
-                        </ion-col>
-                    </ion-row>
+     
+        <ion-list *ngFor="let pharmacy of pharmacies" id="ace" lines="none">
+            <ion-item class="animate__animated animate__fadeInUp"  (click)="hospital_info(pharmacy)" >
+                <div class="item_inner d-flex">
+                    <div class="icon_box">
+                        <ion-icon name="medkit-outline"></ion-icon>
+                    </div>
+                    <div class="text_box">
+                        <h2>{{pharmacy.name}}</h2>
+                        <h3>Supervisor: {{pharmacy.supervisor_name}} </h3>
+                        <h4><ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>{{pharmacy.district}}, {{pharmacy.country}}.</h4>
+                    </div>
                 </div>
-
-                <div class="item_footer">
-                    <h3 class="d-flex">
-                        <span class="address">
-                            <ion-icon class="zmdi zmdi-pin ion-text-start"></ion-icon>
-                            <small>{{pharmacy.district}}, {{pharmacy.country}}.</small> 
-                        </span>
-                        
-                    </h3>
-                </div>
-            </div>
-        </ion-item>
+            </ion-item>
+       
+        </ion-list>
 
       
     </ion-list>

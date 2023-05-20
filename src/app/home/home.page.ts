@@ -16,6 +16,11 @@ export class HomePage implements OnInit {
   students= [];
   currentPage = 1;
 
+
+  tests;
+  orders;
+  consultations;
+
   constructor( 
     private route: Router,
     private djangoService: ApiDjangoService,
@@ -70,10 +75,70 @@ export class HomePage implements OnInit {
         }
       },
       (err) => {
-        console.log(err);
+        console.log(err);0
         loading.dismiss();
       }
     );
+
+
+
+    // this.djangoService.getStudentConsultations(this.currentPage,this.student.id).subscribe(
+    //   (res) => {
+    //     loading.dismiss();
+    //     console.log(res);
+    //     // this.school[0] = res;
+    //     // console.log('School Array : ',this.school[0]);
+    //     this.consultations.push(...res.results);
+ 
+    //     event?.target.complete();
+    //     if (event) {
+    //       event.target.disabled = res.total_pages === this.currentPage;
+    //     }
+    //   },
+    //   (err) => {
+    //     console.log(err);
+    //     loading.dismiss();
+    //   }
+    // );
+
+    // this.djangoService.getStudentTests(this.currentPage,this.student.id).subscribe(
+    //   (res) => {
+    //     loading.dismiss();
+    //     console.log(res);
+    //     // this.school[0] = res;
+    //     // console.log('School Array : ',this.school[0]);
+    //     this.tests.push(...res.results);
+ 
+    //     event?.target.complete();
+    //     if (event) {
+    //       event.target.disabled = res.total_pages === this.currentPage;
+    //     }
+    //   },
+    //   (err) => {
+    //     console.log(err);
+    //     loading.dismiss();
+    //   }
+    // );
+
+
+    // this.djangoService.getStudentPrescriptions(this.currentPage,this.student.id).subscribe(
+    //   (res) => {
+    //     loading.dismiss();
+    //     console.log(res);
+    //     // this.school[0] = res;
+    //     // console.log('School Array : ',this.school[0]);
+    //     this.orders.push(...res.results);
+ 
+    //     event?.target.complete();
+    //     if (event) {
+    //       event.target.disabled = res.total_pages === this.currentPage;
+    //     }
+    //   },
+    //   (err) => {
+    //     console.log(err);
+    //     loading.dismiss();
+    //   }
+    // );
   }
  
   loadMore(event: InfiniteScrollCustomEvent) {
@@ -122,5 +187,15 @@ export class HomePage implements OnInit {
   offers() {
     this.route.navigate(['./offers']);
   } 
+
+
+  a() {
+    this.route.navigate(['./my-cart']);
+  } 
+
+
+  // a() {
+  //   this.route.navigate(['./pill-reminders']);
+  // } 
 
 }

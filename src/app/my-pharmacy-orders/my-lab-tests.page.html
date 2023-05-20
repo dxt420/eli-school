@@ -6,7 +6,7 @@
             
         </ion-buttons>
         <ion-title>
-            Student Test Requests
+            Student Prescriptions 
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -14,15 +14,15 @@
 <ion-content class="bg_color">
     <ion-list lines="none">
         <h1>Upcoming</h1>
-        <ion-item  *ngIf="!tests.length" class="animate__animated animate__fadeInUp">
+        <ion-item  *ngIf="!orders.length" class="animate__animated animate__fadeInUp">
             <ion-item class="animate__animated animate__fadeInUp">
-            <h6>There are currently no upcoming tests</h6>
+            <h6>There are currently no upcoming prescriptions</h6>
         </ion-item>
         </ion-item>
 
      
 
-        <ion-item *ngFor="let test of tests" class="animate__animated animate__fadeInUp">
+        <ion-item *ngFor="let order of orders" class="animate__animated animate__fadeInUp">
             <div class="item_inner d-flex">
                 <div class="img_box center_img" >
                     <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
@@ -30,12 +30,12 @@
                 <div class="text_box">
                     <h2 class="d-flex">
                       
-                        <span >{{test.student.name}}</span>
+                        <span >{{order.student.name}}</span>
                         <ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
                     </h2>
-                    <h3 > Lab Test with {{test.laboratory.name}}
+                    <h3 > Prescription order with {{order.pharmacy.name}}
                     </h3>
-                    <h3 > Supervisor:  {{test.laboratory.supervisor_name}}
+                    <h3 > Supervisor:  {{order.pharmacy.supervisor_name}}
                     </h3>
                 </div>
             </div>

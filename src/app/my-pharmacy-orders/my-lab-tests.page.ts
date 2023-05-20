@@ -14,7 +14,7 @@ export class MyLabTestsPage implements OnInit {
   data = [];
   school = [];
   students= [];
-  tests = [];
+  orders = [];
   currentPage = 1;
 
   myVariable: any;
@@ -81,12 +81,12 @@ export class MyLabTestsPage implements OnInit {
       );
   
   
-      this.djangoService.getSchoolTests(this.currentPage,this.authService.getUsername()).subscribe(
+      this.djangoService.getSchoolPrescriptions(this.currentPage,this.authService.getUsername()).subscribe(
         (res) => {
           loading.dismiss();
           console.log(res);
       
-          this.tests.push(...res.results);
+          this.orders.push(...res.results);
    
           event?.target.complete();
           if (event) {

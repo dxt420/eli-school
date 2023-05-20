@@ -96,33 +96,29 @@
                 </ion-item>
             </ion-item> -->
 
+          
+
+
             <ion-item *ngFor="let consultation of consultations" class="animate__animated animate__fadeInUp">
                 <div class="item_inner d-flex">
-                    <div class="img_box center_img" (click)="appointment_detail(consultation)">
+                    <div class="img_box center_img" >
                         <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
                     </div>
                     <div class="text_box">
                         <h2 class="d-flex">
                           
-                            <span (click)="appointment_detail(consultation)">{{consultation.student.name}}</span>
+                            <span >{{consultation.student.name}}</span>
                             <ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
                         </h2>
-                        <h3 (click)="appointment_detail(consultation)"> consultation with Dr. {{consultation.doctor.name}}
+                        <h3 > Consultation with {{consultation.doctor.name}}
                         </h3>
-                        <h4 class="d-flex">
-                            Suggested Time | {{consultation.consultation_time}}
-    
-                            <!-- <span class="end">
-                                <ion-icon class="zmdi zmdi-phone ion-text-start"></ion-icon>
-                                <ion-icon class="zmdi zmdi-comment-alt-text ion-text-end" (click)="chat()">
-                                </ion-icon>
-                            </span> -->
-                        </h4>
+                        <h3 > Works at:  {{consultation.doctor.affiliation}}
+                        </h3>
                     </div>
                 </div>
     
     
-             
+           
     
             </ion-item>
     
@@ -131,19 +127,66 @@
             <h2>Prescriptions</h2>
     
     
-            <ion-item class="animate__animated animate__fadeInUp">
+            <ion-item *ngIf="!orders.length" class="animate__animated animate__fadeInUp">
                 <ion-item class="animate__animated animate__fadeInUp">
                     <h6>No prescriptions history</h6>
                 </ion-item>
+            </ion-item>
+
+            <ion-item *ngFor="let order of orders" class="animate__animated animate__fadeInUp">
+                <div class="item_inner d-flex">
+                    <div class="img_box center_img" >
+                        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
+                    </div>
+                    <div class="text_box">
+                        <h2 class="d-flex">
+                          
+                            <span >{{order.student.name}}</span>
+                            <ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+                        </h2>
+                        <h3 > Prescription order with {{order.pharmacy.name}}
+                        </h3>
+                        <h3 > Supervisor:  {{order.pharmacy.supervisor_name}}
+                        </h3>
+                    </div>
+                </div>
+    
+    
+           
+    
             </ion-item>
     
             <h2>Lab Tests</h2>
     
     
-            <ion-item class="animate__animated animate__fadeInUp">
+            <ion-item *ngIf="!tests.length" class="animate__animated animate__fadeInUp">
                 <ion-item class="animate__animated animate__fadeInUp">
                     <h6>No tests history</h6>
                 </ion-item>
+            </ion-item>
+
+
+            <ion-item *ngFor="let test of tests" class="animate__animated animate__fadeInUp">
+                <div class="item_inner d-flex">
+                    <div class="img_box center_img" >
+                        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" class="crop_img">
+                    </div>
+                    <div class="text_box">
+                        <h2 class="d-flex">
+                          
+                            <span >{{test.student.name}}</span>
+                            <ion-icon class="zmdi zmdi-more-vert ion-text-end end"></ion-icon>
+                        </h2>
+                        <h3 > Lab Test with {{test.laboratory.name}}
+                        </h3>
+                        <h3 > Supervisor:  {{test.laboratory.supervisor_name}}
+                        </h3>
+                    </div>
+                </div>
+    
+    
+           
+    
             </ion-item>
     
         
